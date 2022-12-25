@@ -1,0 +1,26 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+	content: [
+		'./pages/**/*.{js,ts,jsx,tsx}',
+		'./components/**/*.{js,ts,jsx,tsx}',
+	],
+	theme: {
+		container: {
+			center: true,
+		},
+		extend: {
+			colors: {
+				'grey-boder': 'rgba(0, 0, 0, 0.25)',
+				'grey-text': '#7F7F7F',
+				'white-text': '#FFFFFF',
+				'back-text': '#333333',
+				'active-bg': '#0030E0',
+			},
+			width: {},
+			boxShadow: {
+				'shadow-custom': '0px 2px 6px rgba(0, 0, 0, 0.15)',
+			},
+		},
+	},
+	plugins: [],
+};
