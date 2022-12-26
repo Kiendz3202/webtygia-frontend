@@ -3,7 +3,6 @@ import Coin from './Coin';
 import Stock from './Stock';
 import CategoryFollowing from './CategoryFollowing';
 import Petrol from './Petrol';
-import Gold from './Gold';
 
 function ReferenceSideBar() {
 	const [coins, setCoins] = useState([]);
@@ -45,7 +44,6 @@ function ReferenceSideBar() {
 			<Coin />
 			<Stock />
 			<Petrol />
-			<Gold />
 		</div>
 	);
 }

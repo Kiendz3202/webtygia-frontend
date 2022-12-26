@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Coin from './Coin';
 import Stock from './Stock';
 import CategoryFollowing from './CategoryFollowing';
-import Petrol from './Petrol';
-import Gold from './Gold';
 
 function ReferenceSideBar() {
 	const [coins, setCoins] = useState([]);
@@ -44,8 +42,6 @@ function ReferenceSideBar() {
 			<CategoryFollowing />
 			<Coin />
 			<Stock />
-			<Petrol />
-			<Gold />
 		</div>
 	);
 }

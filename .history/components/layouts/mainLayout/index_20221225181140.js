@@ -4,8 +4,8 @@ import ReferenceSideBar from './referenceSideBar';
 
 function MainLayout({ children }) {
 	return (
-		<div className="container max-w-[144rem] ">
-			<div>
+		<div className="container max-w-[144rem] flex justify-between">
+			<div className=" flex-1">
 				<Header />
 				<div className="flex justify-between">
 					<MenuSideBar />

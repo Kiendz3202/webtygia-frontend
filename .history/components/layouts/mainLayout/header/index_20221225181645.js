@@ -5,8 +5,8 @@ import { Avatar } from '@mui/material';
 
 function Header() {
 	return (
-		<header className="  flex justify-between h-[7.8rem] items-center">
-			<div className="flex h-[7.8rem] items-center pl-[2.3rem] pr-[5.6rem] cursor-pointer">
+		<header className=" border-b border-grey-boder flex justify-between h-[7.8rem] items-center">
+			<div className="flex h-[7.8rem] items-center pl-[2.3rem] pr-[5.6rem] hover:cursor-pointer">
 				<svg
 					width="130"
 					height="30"
@@ -27,45 +27,40 @@ function Header() {
 							y2="30"
 							gradientUnits="userSpaceOnUse"
 						>
-							<stop stopColor="#1366FF" />
-							<stop offset="1" stopColor="#6835FF" />
+							<stop stop-color="#1366FF" />
+							<stop offset="1" stop-color="#6835FF" />
 						</linearGradient>
 					</defs>
 				</svg>
 			</div>
-			<div className=" flex flex-1 border-b border-grey-boder h-[7.8rem] items-center">
-				<div className=" flex-1">
-					<ul className="flex">
-						<li>
-							<label htmlFor="search">
-								<SearchIcon className=" text-[3rem] cursor-pointer" />
-							</label>
-						</li>
-						<li className=" w-full">
-							<input
-								id="search"
-								className=" w-full outline-none text-[2.0rem]"
-								placeholder="Tìm kiếm"
-							/>
-						</li>
-					</ul>
-				</div>
-				<div className="w-[31.8rem]">
-					<ul className="flex justify-end pr-[2.5rem] items-center">
-						<li className=" cursor-pointer">
-							<NotificationsNoneIcon className="text-[3rem]" />
-						</li>
-						<li className=" px-[3rem]">
-							<Avatar
-								className="text-[3rem] cursor-pointer"
-								src="https://scontent.fhan5-8.fna.fbcdn.net/v/t39.30808-6/319823466_1167699333875239_1971434876324844237_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ia7FzH6yNnoAX8u0JUT&tn=R5tPph1G-IwzutAt&_nc_ht=scontent.fhan5-8.fna&oh=00_AfCE1l9GUAo6P5Et5d8v8DV1Hiht15ePzwUhlTt4G826QA&oe=63AC99B2"
-							/>
-						</li>
-						<li className=" text-[1.8rem] block w-[30rem] font-medium ">
-							Nguyen Manh Kien
-						</li>
-					</ul>
-				</div>
+			<div className=" flex-1">
+				<ul className="flex">
+					<li>
+						<SearchIcon className=" text-[3rem] hover:cursor-pointer" />
+					</li>
+					<li className=" w-full">
+						<input
+							className=" w-full outline-none text-[2.0rem]"
+							placeholder="Tìm kiếm"
+						/>
+					</li>
+				</ul>
+			</div>
+			<div className="w-[31.8rem]">
+				<ul className="flex justify-end pr-[2.5rem] items-center">
+					<li>
+						<NotificationsNoneIcon className="text-[3rem]" />
+					</li>
+					<li className=" px-[3rem]">
+						<Avatar
+							className="text-[3rem]"
+							src="https://scontent.fhan5-8.fna.fbcdn.net/v/t39.30808-6/319823466_1167699333875239_1971434876324844237_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ia7FzH6yNnoAX8u0JUT&tn=R5tPph1G-IwzutAt&_nc_ht=scontent.fhan5-8.fna&oh=00_AfCE1l9GUAo6P5Et5d8v8DV1Hiht15ePzwUhlTt4G826QA&oe=63AC99B2"
+						/>
+					</li>
+					<li className=" text-[1.8rem] block w-[30rem] font-medium ">
+						Nguyen Manh Kien
+					</li>
+				</ul>
 			</div>
 		</header>
 	);

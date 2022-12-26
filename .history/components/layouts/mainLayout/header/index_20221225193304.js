@@ -28,7 +28,7 @@ function Header() {
 							gradientUnits="userSpaceOnUse"
 						>
 							<stop stopColor="#1366FF" />
-							<stop offset="1" stopColor="#6835FF" />
+							<stop offset="1" stop-color="#6835FF" />
 						</linearGradient>
 					</defs>
 				</svg>

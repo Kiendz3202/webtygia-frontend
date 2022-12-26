@@ -27,13 +27,13 @@ function Header() {
 							y2="30"
 							gradientUnits="userSpaceOnUse"
 						>
-							<stop stopColor="#1366FF" />
-							<stop offset="1" stopColor="#6835FF" />
+							<stop stop-color="#1366FF" />
+							<stop offset="1" stop-color="#6835FF" />
 						</linearGradient>
 					</defs>
 				</svg>
 			</div>
-			<div className=" flex flex-1 border-b border-grey-boder h-[7.8rem] items-center">
+			<div className=" flex flex-1 border-b border-grey-boder h-[7.8rem] leading-[78rem]">
 				<div className=" flex-1">
 					<ul className="flex">
 						<li>
