@@ -484,12 +484,12 @@ function ChartCoin({ coin }) {
 		});
 	}
 	console.log(arrayChart);
+	const chartDiv = document.getElementById('container-chart');
 	useEffect(() => {
 		setChartData(arrayChart);
-		const chartDiv = document.getElementById('container-chart');
 		const chartOptions = {
-			width: chartDiv?.offsetWidth - 1 || 787,
-			height: chartDiv?.offsetHeight || 787,
+			width: chartDiv.offsetWidth - 1 || 787,
+			height: chartDiv.offsetHeight || 787,
 			// localization: {
 			// 	timeFormatter: (businessDayOrTimestamp) => {
 			// 		return Date(businessDayOrTimestamp); //or whatever JS formatting you want here
@@ -549,12 +549,10 @@ function ChartCoin({ coin }) {
 		// });
 		// };
 		window.onresize = function () {
-			if (chartDiv.offsetWidth > 0) {
-				chart.applyOptions({
-					width: chartDiv?.offsetWidth - 1 || 787,
-					height: chartDiv?.offsetHeight || 787,
-				});
-			}
+			chart.applyOptions({
+				width: chartDiv.offsetWidth - 1 || 787,
+				height: chartDiv.offsetHeight || 787,
+			});
 		};
 
 		chart.timeScale().fitContent();

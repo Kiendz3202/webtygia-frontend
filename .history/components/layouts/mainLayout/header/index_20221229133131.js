@@ -42,7 +42,7 @@ function Header() {
 						<ul className="flex w-full ">
 							<li>
 								<label htmlFor="search">
-									<SearchIcon className=" text-[3rem] cursor-pointer" />
+									<SearchIcon className=" text-[3rem] mr-[3rem] cursor-pointer" />
 								</label>
 							</li>
 							<li className=" w-full mr-[3rem] ">

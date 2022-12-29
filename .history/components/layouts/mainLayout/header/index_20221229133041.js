@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import SearchIcon from '@mui/icons-material/Search';
+// import SearchIcon from '@mui/icons-material/Search';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import { Avatar } from '@mui/material';
 import Link from 'next/link';

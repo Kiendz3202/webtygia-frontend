@@ -29,7 +29,7 @@ function ExchagneRate({ data }) {
 		// if(Number(number) === number && number % 1 === 0){
 		//int
 		// setCoinToUsd(number * data.currentPrice);
-		let result = number / data.currentPrice;
+		let result = number * data.currentPrice;
 		if (isNaN(result)) {
 			inputCoin.current.value = 'Ngăn cách bằng dấu .';
 		} else {

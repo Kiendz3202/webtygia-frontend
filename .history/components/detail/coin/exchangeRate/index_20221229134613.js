@@ -1,41 +1,13 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 
 function ExchagneRate({ data }) {
-	// const [coinToUsd, setCoinToUsd] = useState();
-	const inputUsd = useRef();
-	// const [usdToCoin, setusdToCoin] = useState();
-	const inputCoin = useRef();
+	const [coinToUsd, setCoinToUsd] = useState();
 
 	const convertCoinToUsd = (e) => {
 		let number = e.target.value;
 		// if(Number(number) === number && number % 1 === 0){
 		//int
-		// setCoinToUsd(number * data.currentPrice);
-		let result = number * data.currentPrice;
-		if (isNaN(result)) {
-			inputUsd.current.value = 'Ngăn cách bằng dấu .';
-		} else {
-			inputUsd.current.value = result;
-		}
-		// }
-		// if(Number(number) === number && number % 1 !== 0){
-		// 	//float
-		// 	setCoinToUsd(number)
-		// }
-	};
-
-	const convertUsdToCoin = (e) => {
-		let number = e.target.value;
-		// if(Number(number) === number && number % 1 === 0){
-		//int
-		// setCoinToUsd(number * data.currentPrice);
-		let result = number / data.currentPrice;
-		if (isNaN(result)) {
-			inputCoin.current.value = 'Ngăn cách bằng dấu .';
-		} else {
-			inputCoin.current.value = result;
-		}
-		// inputCoin.current.value = number / data.currentPrice;
+		setCoinToUsd(number * data.currentPrice);
 		// }
 		// if(Number(number) === number && number % 1 !== 0){
 		// 	//float
@@ -51,7 +23,6 @@ function ExchagneRate({ data }) {
 				<div className=" justify-between ml-[3rem] flex items-center">
 					<div className="mr-[1rem] border-r border-black w-full">
 						<input
-							ref={inputCoin}
 							onChange={convertCoinToUsd}
 							className=" outline-none text-[2rem] w-full"
 							placeholder="0"
@@ -75,8 +46,7 @@ function ExchagneRate({ data }) {
 				<div className=" justify-between ml-[3rem] sm:mr-[3rem] flex items-center">
 					<div className="mr-[1rem] border-r border-black w-full">
 						<input
-							onChange={convertUsdToCoin}
-							ref={inputUsd}
+							value={coinToUsd}
 							className=" outline-none text-[2rem]"
 							placeholder="0"
 						/>

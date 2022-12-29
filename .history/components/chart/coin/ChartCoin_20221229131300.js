@@ -488,8 +488,8 @@ function ChartCoin({ coin }) {
 		setChartData(arrayChart);
 		const chartDiv = document.getElementById('container-chart');
 		const chartOptions = {
-			width: chartDiv?.offsetWidth - 1 || 787,
-			height: chartDiv?.offsetHeight || 787,
+			width: chartDiv.offsetWidth - 1,
+			height: chartDiv.offsetHeight,
 			// localization: {
 			// 	timeFormatter: (businessDayOrTimestamp) => {
 			// 		return Date(businessDayOrTimestamp); //or whatever JS formatting you want here
@@ -543,18 +543,16 @@ function ChartCoin({ coin }) {
 
 		// Make Chart Responsive with screen resize
 		// window.onresize = function () {
-		// chart.applyOptions({
-		// 	width: chartDiv.offsetWidth - 1,
-		// 	height: chartDiv.offsetHeight,
-		// });
+		chart.applyOptions({
+			width: chartDiv.offsetWidth - 1,
+			height: chartDiv.offsetHeight,
+		});
 		// };
 		window.onresize = function () {
-			if (chartDiv.offsetWidth > 0) {
-				chart.applyOptions({
-					width: chartDiv?.offsetWidth - 1 || 787,
-					height: chartDiv?.offsetHeight || 787,
-				});
-			}
+			chart.applyOptions({
+				width: chartDiv.offsetWidth - 1,
+				height: chartDiv.offsetHeight,
+			});
 		};
 
 		chart.timeScale().fitContent();

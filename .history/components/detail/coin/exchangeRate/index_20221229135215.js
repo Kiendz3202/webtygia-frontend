@@ -11,12 +11,7 @@ function ExchagneRate({ data }) {
 		// if(Number(number) === number && number % 1 === 0){
 		//int
 		// setCoinToUsd(number * data.currentPrice);
-		let result = number * data.currentPrice;
-		if (isNaN(result)) {
-			inputUsd.current.value = 'Ngăn cách bằng dấu .';
-		} else {
-			inputUsd.current.value = result;
-		}
+		inputUsd.current.value = number * data.currentPrice;
 		// }
 		// if(Number(number) === number && number % 1 !== 0){
 		// 	//float
@@ -29,13 +24,7 @@ function ExchagneRate({ data }) {
 		// if(Number(number) === number && number % 1 === 0){
 		//int
 		// setCoinToUsd(number * data.currentPrice);
-		let result = number / data.currentPrice;
-		if (isNaN(result)) {
-			inputCoin.current.value = 'Ngăn cách bằng dấu .';
-		} else {
-			inputCoin.current.value = result;
-		}
-		// inputCoin.current.value = number / data.currentPrice;
+		inputCoin.current.value = number / data.currentPrice;
 		// }
 		// if(Number(number) === number && number % 1 !== 0){
 		// 	//float

@@ -41,7 +41,10 @@ function Header() {
 					<div className="hidden sm:flex flex-1 sm:ml-[5rem]">
 						<ul className="flex w-full ">
 							<li>
-								<label htmlFor="search">
+								<label
+									htmlFor="search"
+									className=" text-[3rem]"
+								>
 									<SearchIcon className=" text-[3rem] cursor-pointer" />
 								</label>
 							</li>

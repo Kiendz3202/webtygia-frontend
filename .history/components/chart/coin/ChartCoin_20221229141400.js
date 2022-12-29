@@ -548,14 +548,23 @@ function ChartCoin({ coin }) {
 		// 	height: chartDiv.offsetHeight,
 		// });
 		// };
-		window.onresize = function () {
-			if (chartDiv.offsetWidth > 0) {
-				chart.applyOptions({
-					width: chartDiv?.offsetWidth - 1 || 787,
-					height: chartDiv?.offsetHeight || 787,
-				});
-			}
+		// window.onresize = function () {
+		// chart.applyOptions({
+		// 	width: chartDiv?.offsetWidth - 1 || 787,
+		// 	height: chartDiv?.offsetHeight || 787,
+		// });
+		// };
+		const onresize = (dom_elem, callback) => {
+			const resizeObserver = new ResizeObserver(() => callback());
+			resizeObserver.observe(dom_elem);
 		};
+
+		onresize(chartDiv, function () {
+			chart.applyOptions({
+				width: chartDiv?.offsetWidth - 1 || 787,
+				height: chartDiv?.offsetHeight || 787,
+			});
+		});
 
 		chart.timeScale().fitContent();
 
