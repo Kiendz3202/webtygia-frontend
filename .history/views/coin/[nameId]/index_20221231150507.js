@@ -7,7 +7,6 @@ import PriceDetail from '@components/detail/coin/priceDetail';
 import ExchagneRate from '@components/detail/coin/exchangeRate';
 import Description from '@components/detail/coin/description';
 import dynamic from 'next/dynamic';
-import Head from 'next/head';
 const ChartCoin = dynamic(
 	() => import('../../../components/chart/coin/ChartCoin'),
 	{
@@ -29,30 +28,22 @@ function CoinPageDetailView({ descriptionData }) {
 	}
 	if (data) {
 		return (
-			<>
-				<Head>
-					<meta
-						http-equiv="Content-Security-Policy"
-						content="upgrade-insecure-requests"
-					/>
-				</Head>
-				<MainLayout>
-					<div className=" h-auto mt-[4.6rem] mb-[2.5rem] mx-[2.1rem] bg-white-text rounded-[1.5rem] px-[3.2rem] py-[3.2rem] shadow-shadow-custom">
-						<div>
-							<PriceDetail
-								descriptionData={descriptionData}
-								coin={data}
-							/>
-							<ExchagneRate data={data} />
-							<ChartCoin coin={data} />
-							<Description
-								descriptionData={descriptionData}
-								coin={data}
-							/>
-						</div>
+			<MainLayout>
+				<div className=" h-auto mt-[4.6rem] mb-[2.5rem] mx-[2.1rem] bg-white-text rounded-[1.5rem] px-[3.2rem] py-[3.2rem] shadow-shadow-custom">
+					<div>
+						<PriceDetail
+							descriptionData={descriptionData}
+							coin={data}
+						/>
+						<ExchagneRate data={data} />
+						<ChartCoin coin={data} />
+						<Description
+							descriptionData={descriptionData}
+							coin={data}
+						/>
 					</div>
-				</MainLayout>
-			</>
+				</div>
+			</MainLayout>
 		);
 	}
 }
