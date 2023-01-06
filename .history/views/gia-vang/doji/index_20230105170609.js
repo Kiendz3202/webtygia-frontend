@@ -1,15 +1,13 @@
-import React from 'react';
+import NameHeader from '@components/detail/gold/NameHeader';
 import MainLayout from '@components/layouts/mainLayout';
 import { useGold } from '@services/gold/useGold';
-import NameHeader from '@components/detail/gold/NameHeader';
-import SjcPriceTable from '@components/detail/gold/priceTable/SjcPriceTable';
+import React from 'react';
 
-function SjcView() {
-	const { isSuccess, data, isLoading, isError } = useGold('sjc');
+function DojiView() {
+	const { isSuccess, data, isLoading, isError } = useGold('doji');
 	const imageURL =
-		'https://printgo.vn/uploads/file-logo/1/512x512.075e191500b6b0dd513f7d34d8bbfa77.ai.1.png';
-	const name = 'SJC';
-
+		'https://gigamall.com.vn/data/2019/09/20/16350118_LOGO-DOJI.png';
+	const name = 'DOJI';
 	return (
 		<MainLayout>
 			<div className=" h-auto mt-[4.6rem] mb-[2.5rem] mx-[2.1rem] bg-white-text rounded-[1.5rem] px-[3.2rem] py-[3.2rem] shadow-shadow-custom">
@@ -19,7 +17,6 @@ function SjcView() {
 						image={imageURL}
 						timeUpdate={data?.timeUpdate}
 					/>
-					<SjcPriceTable data={data} />
 					<div className=" mt-[4rem]">
 						<h1 className="text-[2.4rem] text-blue-text font-medium">
 							Giới thiệu về Công Ty TNHH Một Thành Viên Vàng Bạc
@@ -78,4 +75,4 @@ function SjcView() {
 	);
 }
 
-export default SjcView;
+export default DojiView;

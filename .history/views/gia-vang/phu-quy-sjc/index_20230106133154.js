@@ -2,14 +2,12 @@ import React from 'react';
 import MainLayout from '@components/layouts/mainLayout';
 import { useGold } from '@services/gold/useGold';
 import NameHeader from '@components/detail/gold/NameHeader';
-import SjcPriceTable from '@components/detail/gold/priceTable/SjcPriceTable';
 
-function SjcView() {
-	const { isSuccess, data, isLoading, isError } = useGold('sjc');
+function PhuQuySjcView() {
+	const { isSuccess, data, isLoading, isError } = useGold('phuquysjc');
 	const imageURL =
-		'https://printgo.vn/uploads/file-logo/1/512x512.075e191500b6b0dd513f7d34d8bbfa77.ai.1.png';
-	const name = 'SJC';
-
+		'http://theme.hstatic.net/200000061680/1000549213/14/share_fb_home.png?v=693';
+	const name = 'Phú Quý SJC';
 	return (
 		<MainLayout>
 			<div className=" h-auto mt-[4.6rem] mb-[2.5rem] mx-[2.1rem] bg-white-text rounded-[1.5rem] px-[3.2rem] py-[3.2rem] shadow-shadow-custom">
@@ -19,11 +17,10 @@ function SjcView() {
 						image={imageURL}
 						timeUpdate={data?.timeUpdate}
 					/>
-					<SjcPriceTable data={data} />
+					{/* <SjcPriceTable data={data} /> */}
 					<div className=" mt-[4rem]">
 						<h1 className="text-[2.4rem] text-blue-text font-medium">
-							Giới thiệu về Công Ty TNHH Một Thành Viên Vàng Bạc
-							Đá Quý Sài Gòn - SJC
+							Giới thiệu Vàng Phú Quý
 						</h1>
 						<p className="text-[1.8rem] mt-[1rem] font-normal">
 							Được thành lập năm 1988, là doanh nghiệp nhà nước
@@ -78,4 +75,4 @@ function SjcView() {
 	);
 }
 
-export default SjcView;
+export default PhuQuySjcView;

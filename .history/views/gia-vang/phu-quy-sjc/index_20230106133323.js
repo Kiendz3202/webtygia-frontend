@@ -2,14 +2,12 @@ import React from 'react';
 import MainLayout from '@components/layouts/mainLayout';
 import { useGold } from '@services/gold/useGold';
 import NameHeader from '@components/detail/gold/NameHeader';
-import SjcPriceTable from '@components/detail/gold/priceTable/SjcPriceTable';
 
-function SjcView() {
-	const { isSuccess, data, isLoading, isError } = useGold('sjc');
+function PhuQuySjcView() {
+	const { isSuccess, data, isLoading, isError } = useGold('phuquysjc');
 	const imageURL =
-		'https://printgo.vn/uploads/file-logo/1/512x512.075e191500b6b0dd513f7d34d8bbfa77.ai.1.png';
-	const name = 'SJC';
-
+		'http://theme.hstatic.net/200000061680/1000549213/14/share_fb_home.png?v=693';
+	const name = 'Phú Quý SJC';
 	return (
 		<MainLayout>
 			<div className=" h-auto mt-[4.6rem] mb-[2.5rem] mx-[2.1rem] bg-white-text rounded-[1.5rem] px-[3.2rem] py-[3.2rem] shadow-shadow-custom">
@@ -19,30 +17,36 @@ function SjcView() {
 						image={imageURL}
 						timeUpdate={data?.timeUpdate}
 					/>
-					<SjcPriceTable data={data} />
+					{/* <SjcPriceTable data={data} /> */}
 					<div className=" mt-[4rem]">
 						<h1 className="text-[2.4rem] text-blue-text font-medium">
-							Giới thiệu về Công Ty TNHH Một Thành Viên Vàng Bạc
-							Đá Quý Sài Gòn - SJC
+							Giới thiệu Vàng Phú Quý
 						</h1>
 						<p className="text-[1.8rem] mt-[1rem] font-normal">
-							Được thành lập năm 1988, là doanh nghiệp nhà nước
-							trực thuộc UBND TP.HCM. Hoạt động theo mô hình công
-							ty mẹ - con như một tập đoàn kinh doanh đa ngành.
-							Trong đó sản xuất, kinh doanh vàng và trang sức là
-							ngành kinh doanh chính, địa ốc, đầu tư tài chính và
-							dịch vụ.
+							Được thành lập từ năm 2003 đến nay đã hơn một thập
+							kỷ. Với phương châm kinh doanh trọng chữ tín, luôn
+							đảm bảo tối đa lợi ích của khách hàng, Phú Quý đã
+							nhanh chóng có chỗ đứng vững chắc trên thị trường
+							Vàng bạc đá quý trong nước. Đáp ứng nhu cầu sở hữu
+							đồ trang sức gắn với các dịp kỷ niệm, làm quà tặng
+							hay để đeo trong các ngày lễ trang trọng, sản phẩm
+							của Phú Quý là kết tinh của sáng tạo độc đáo, đa
+							dạng theo xu hướng, phù hợp với phong cách người
+							dùng cùng năng lực chế tác tinh xảo, chất lượng cao.
+							Mỗi dòng sản phẩm trang sức của Phú Quý đều thể hiện
+							tâm huyết mang tới niềm hạnh phúc bền lâu cho mọi
+							khách hàng.
 						</p>
 						<p className="text-[1.8rem] mt-[1rem] font-normal">
-							SJC định hướng phát triển thành một tập đoàn kinh tế
-							đầu ngành của quốc gia trong vòng vài năm tới, phát
-							triển ngành kinh doanh vàng và trang sức với nền
-							tảng một thương hiệu quốc gia để trở thành thương
-							hiệu quốc tế. Mạng lưới kinh doanh phân phối gồm hơn
-							200 cửa hàng, 43 đại lý chính thức, trên 3.000 cửa
-							hàng liên kết bán lẻ toàn quốc. Bên cạnh đó, SJC còn
-							có một xí nghiệp sản xuất nữ trang tập trung, xuất
-							xưởng hơn 500.000 sản phẩm một năm.
+							Các sản phẩm thiết kế độc quyền của Phú Quý như nhẫn
+							tròn trơn vàng 999.9, BST Thần Tài Phú Quý với những
+							sản phẩm độc đáo như bộ Lộc 12 con giáp bằng vàng
+							24K - 999.9, bộ Tượng 12 con giáp bằng vàng 24K –
+							999.9, trang sức vàng Phú Quý, nhẫn cưới Phú Quý
+							không những được khách hàng lựa chọn và tin dùng
+							trong nhiều năm qua, mà còn thể hiện một bước tiến
+							mới trong việc khẳng đinh uy tín của thương hiệu Phú
+							Quý.
 						</p>
 						<p className="text-[1.8rem] mt-[1rem] font-normal">
 							Thương hiệu SJC đã đi vào tâm trí của khách hàng là
@@ -78,4 +82,4 @@ function SjcView() {
 	);
 }
 
-export default SjcView;
+export default PhuQuySjcView;

@@ -10,6 +10,24 @@ function SjcView() {
 		'https://printgo.vn/uploads/file-logo/1/512x512.075e191500b6b0dd513f7d34d8bbfa77.ai.1.png';
 	const name = 'SJC';
 
+	// //convert to dd:mm:yy
+	// function padTo2Digits(num) {
+	// 	return num.toString().padStart(2, '0');
+	// }
+	// function formatDate(date) {
+	// 	return [
+	// 		padTo2Digits(date.getDate()),
+	// 		padTo2Digits(date.getMonth() + 1),
+	// 		date.getFullYear(),
+	// 	].join('/');
+	// }
+	// const dateDay = formatDate(new Date(data?.timeUpdate * 1000));
+
+	// //convert to hh:mm:ss
+	// const d = new Date(data?.timeUpdate * 1000);
+	// let dateHour = d.toTimeString();
+	// dateHour = dateHour.split(' ')[0];
+
 	return (
 		<MainLayout>
 			<div className=" h-auto mt-[4.6rem] mb-[2.5rem] mx-[2.1rem] bg-white-text rounded-[1.5rem] px-[3.2rem] py-[3.2rem] shadow-shadow-custom">
