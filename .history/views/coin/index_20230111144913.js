@@ -63,13 +63,13 @@ function CoinPageView() {
 								{data && <CoinList data={data?.coinList} />}
 							</tbody>
 						</table> */}
-						<table className="w-[78.8rem]  mt-[4rem]">
+						<table className="w-[78.9rem]  ">
 							<thead className="text-[1.4rem] font-medium h-[4.5rem] text-blue-text">
 								<tr>
 									<th className="w-[4.8rem]  bg-back-ground-1  border-r border-grey-boder rounded-l-[0.6rem]">
 										#
 									</th>
-									<th className="w-[16rem]  h-[4.5rem] bg-back-ground-1 text-start pl-[3rem]">
+									<th className="w-[20rem]  h-[4.5rem] bg-back-ground-1 text-start pl-[3rem]">
 										Tên
 									</th>
 									<th className=" bg-[#F5F5F5] text-start">

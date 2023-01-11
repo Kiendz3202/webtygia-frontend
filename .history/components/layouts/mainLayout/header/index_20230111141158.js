@@ -7,11 +7,11 @@ import Link from 'next/link';
 function Header() {
 	return (
 		<header id="header" className=" sm:fixed w-full top-0  z-50">
-			<div className="  w-full max-w-[144rem] flex justify-between h-[7.8rem] items-center ">
-				<div className="flex h-[7.8rem] items-center  sm:pl-[0.1rem] cursor-pointer bg-back-ground-1  pl-[2rem] sm:border-grey-boder sm:border-b">
+			<div className="  w-full max-w-[144rem] flex justify-between h-[7.8rem] items-center sm:border-grey-boder sm:border-b">
+				<div className="flex h-[7.8rem] items-center pr-[5.6rem] sm:pl-[0.1rem] cursor-pointer bg-back-ground-1  pl-[1rem]">
 					<Link href="/">
 						<svg
-							className="ml-[3rem]"
+							className=""
 							width="130"
 							height="30"
 							viewBox="0 0 130 30"

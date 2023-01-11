@@ -11,7 +11,7 @@ function Header() {
 				<div className="flex h-[7.8rem] items-center  sm:pl-[0.1rem] cursor-pointer bg-back-ground-1  pl-[2rem] sm:border-grey-boder sm:border-b">
 					<Link href="/">
 						<svg
-							className="ml-[3rem]"
+							className=""
 							width="130"
 							height="30"
 							viewBox="0 0 130 30"

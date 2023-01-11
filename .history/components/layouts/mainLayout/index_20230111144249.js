@@ -16,7 +16,7 @@ function MainLayout({ children }) {
 					id="main-content"
 					className="flex justify-between bg-back-ground-1"
 				>
-					{/* <MenuSideBar /> */}
+					<MenuSideBar />
 					{/* max-w-[89.5rem] */}
 					<div className="w-full h-full max-w-[110.2rem] mx-auto  sm:mt-[7.8rem]">
 						{children}
