@@ -30,7 +30,7 @@ function MainLayout({ children }) {
 			<div className="relative">
 				<Header />
 				<NavigationHeader />
-				<div className="container mx-auto max-w-[144rem]">
+				<div className="container mx-auto">
 					<div
 						id="main-content"
 						className="flex justify-between max-w-[144rem] mx-auto"

@@ -49,7 +49,7 @@ function Petrol() {
 									<li className="text-[1.4rem] font-medium ml-[-3rem]">
 										{petrol.ron95III_1.replace('.', ',')}
 									</li>
-									<li className="text-[1.4rem] font-medium  ml-[-1rem]">
+									<li className="text-[1.4rem] font-medium text-price-increase ml-[-1rem]">
 										{petrol.ron95III_2.replace('.', ',')}
 									</li>
 								</ul>
@@ -60,7 +60,7 @@ function Petrol() {
 									<li className="text-[1.4rem] font-medium ml-[-3rem]">
 										{petrol.ron95v_1.replace('.', ',')}
 									</li>
-									<li className="text-[1.4rem] font-medium  ml-[-1rem]">
+									<li className="text-[1.4rem] font-medium text-price-increase ml-[-1rem]">
 										{petrol.ron95v_2.replace('.', ',')}
 									</li>
 								</ul>
@@ -71,7 +71,7 @@ function Petrol() {
 									<li className="text-[1.4rem] font-medium ml-[-3rem]">
 										{petrol.ron92II_1.replace('.', ',')}
 									</li>
-									<li className="text-[1.4rem] font-medium  ml-[-1rem]">
+									<li className="text-[1.4rem] font-medium text-price-increase ml-[-1rem]">
 										{petrol.ron92II_2.replace('.', ',')}
 									</li>
 								</ul>
@@ -82,7 +82,7 @@ function Petrol() {
 									<li className="text-[1.4rem] font-medium ml-[-3rem]">
 										{petrol.do005SII_1.replace('.', ',')}
 									</li>
-									<li className="text-[1.4rem] font-medium  ml-[-1rem]">
+									<li className="text-[1.4rem] font-medium text-price-increase ml-[-1rem]">
 										{petrol.do005SII_2.replace('.', ',')}
 									</li>
 								</ul>
@@ -93,7 +93,7 @@ function Petrol() {
 									<li className="text-[1.4rem] font-medium ml-[-3rem]">
 										{petrol.do0001SV_1.replace('.', ',')}
 									</li>
-									<li className="text-[1.4rem] font-medium  ml-[-1rem]">
+									<li className="text-[1.4rem] font-medium text-price-increase ml-[-1rem]">
 										{petrol.do0001SV_2.replace('.', ',')}
 									</li>
 								</ul>
@@ -104,7 +104,7 @@ function Petrol() {
 									<li className="text-[1.4rem] font-medium ml-[-3rem]">
 										{petrol.dauhoa_1.replace('.', ',')}
 									</li>
-									<li className="text-[1.4rem] font-medium  ml-[-1rem]">
+									<li className="text-[1.4rem] font-medium text-price-increase ml-[-1rem]">
 										{petrol.dauhoa_2.replace('.', ',')}
 									</li>
 								</ul>

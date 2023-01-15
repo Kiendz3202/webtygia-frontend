@@ -6,9 +6,9 @@ import axios from 'axios';
 
 function CoinItem({ coin, index }) {
 	const router = useRouter();
-	const path = router.pathname;
-	// console.log(path);
-	// console.log(router.pathname);
+	const path = router.asPath;
+	console.log(path);
+	console.log(router);
 	return (
 		<tr
 			key={coin.nameId}
@@ -16,7 +16,7 @@ function CoinItem({ coin, index }) {
 		>
 			<td className="w-[4.8rem]  z-10 text-center">{index + 1}</td>
 			<td className="w-[16rem] text-start cursor-pointer ">
-				<Link href={`${path}/${coin.nameId}`}>
+				<Link href={`${path.pathName}/${coin.nameId}`}>
 					{/* <Link href={`${path}/${coin.nameId}`}> */}
 					<span className="hover:opacity-80">
 						<img

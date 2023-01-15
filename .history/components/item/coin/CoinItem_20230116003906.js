@@ -6,9 +6,8 @@ import axios from 'axios';
 
 function CoinItem({ coin, index }) {
 	const router = useRouter();
-	const path = router.pathname;
-	// console.log(path);
-	// console.log(router.pathname);
+	const path = router.asPath;
+	console.log(path);
 	return (
 		<tr
 			key={coin.nameId}

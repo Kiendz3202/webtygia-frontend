@@ -5,8 +5,8 @@ import React from 'react';
 function NavigationHeader() {
 	const router = useRouter();
 	return (
-		<div className="hidden sm:block sticky top-0 mx-[1rem] shadow-shadow-custom  bg-white z-50">
-			<div className="  w-full max-w-[144rem] flex   items-center px-[1rem] mt-[1rem] mx-auto">
+		<div className="hidden sm:block sticky top-0 mx-[1rem] px-[1rem] shadow-shadow-custom  bg-white z-50">
+			<div className="  w-full max-w-[144rem] flex   items-center mt-[1rem] mx-auto">
 				<ul className="flex flex-wrap  justify-between items-center text-grey-text">
 					<Link href="/gia-vang/sjc" className="mr-[1rem]">
 						<li

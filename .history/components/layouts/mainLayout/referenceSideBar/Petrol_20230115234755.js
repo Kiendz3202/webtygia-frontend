@@ -47,10 +47,12 @@ function Petrol() {
 										RON95 III
 									</li>
 									<li className="text-[1.4rem] font-medium ml-[-3rem]">
-										{petrol.ron95III_1.replace('.', ',')}
+										{petrol.ron95III_1
+											.toString()
+											.replace('.', ',')}
 									</li>
-									<li className="text-[1.4rem] font-medium  ml-[-1rem]">
-										{petrol.ron95III_2.replace('.', ',')}
+									<li className="text-[1.4rem] font-medium text-price-increase ml-[-1rem]">
+										{petrol.ron95III_2}
 									</li>
 								</ul>
 								<ul className="grid grid-cols-4 text-back-text text-[1.4rem] pt-[1.5rem]">
@@ -58,10 +60,10 @@ function Petrol() {
 										RON95 V
 									</li>
 									<li className="text-[1.4rem] font-medium ml-[-3rem]">
-										{petrol.ron95v_1.replace('.', ',')}
+										{petrol.ron95v_1}
 									</li>
-									<li className="text-[1.4rem] font-medium  ml-[-1rem]">
-										{petrol.ron95v_2.replace('.', ',')}
+									<li className="text-[1.4rem] font-medium text-price-increase ml-[-1rem]">
+										{petrol.ron95v_2}
 									</li>
 								</ul>
 								<ul className="grid grid-cols-4 text-back-text text-[1.4rem] pt-[1.5rem]">
@@ -69,10 +71,10 @@ function Petrol() {
 										RON92 II
 									</li>
 									<li className="text-[1.4rem] font-medium ml-[-3rem]">
-										{petrol.ron92II_1.replace('.', ',')}
+										{petrol.ron92II_1}
 									</li>
-									<li className="text-[1.4rem] font-medium  ml-[-1rem]">
-										{petrol.ron92II_2.replace('.', ',')}
+									<li className="text-[1.4rem] font-medium text-price-increase ml-[-1rem]">
+										{petrol.ron92II_2}
 									</li>
 								</ul>
 								<ul className="grid grid-cols-4 text-back-text text-[1.4rem] pt-[1.5rem]">
@@ -80,10 +82,10 @@ function Petrol() {
 										DO 0,05S-II
 									</li>
 									<li className="text-[1.4rem] font-medium ml-[-3rem]">
-										{petrol.do005SII_1.replace('.', ',')}
+										{petrol.do005SII_1}
 									</li>
-									<li className="text-[1.4rem] font-medium  ml-[-1rem]">
-										{petrol.do005SII_2.replace('.', ',')}
+									<li className="text-[1.4rem] font-medium text-price-increase ml-[-1rem]">
+										{petrol.do005SII_2}
 									</li>
 								</ul>
 								<ul className="grid grid-cols-4 text-back-text text-[1.4rem] pt-[1.5rem]">
@@ -91,10 +93,10 @@ function Petrol() {
 										DO 0,001S-V
 									</li>
 									<li className="text-[1.4rem] font-medium ml-[-3rem]">
-										{petrol.do0001SV_1.replace('.', ',')}
+										{petrol.do0001SV_1}
 									</li>
-									<li className="text-[1.4rem] font-medium  ml-[-1rem]">
-										{petrol.do0001SV_2.replace('.', ',')}
+									<li className="text-[1.4rem] font-medium text-price-increase ml-[-1rem]">
+										{petrol.do0001SV_2}
 									</li>
 								</ul>
 								<ul className="grid grid-cols-4 text-back-text text-[1.4rem] pt-[1.5rem]">
@@ -102,10 +104,10 @@ function Petrol() {
 										Dầu hoả
 									</li>
 									<li className="text-[1.4rem] font-medium ml-[-3rem]">
-										{petrol.dauhoa_1.replace('.', ',')}
+										{petrol.dauhoa_1}
 									</li>
-									<li className="text-[1.4rem] font-medium  ml-[-1rem]">
-										{petrol.dauhoa_2.replace('.', ',')}
+									<li className="text-[1.4rem] font-medium text-price-increase ml-[-1rem]">
+										{petrol.dauhoa_2}
 									</li>
 								</ul>
 							</div>
