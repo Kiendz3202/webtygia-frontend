@@ -26,7 +26,7 @@ function NewsFollowTable({ data, populateField }) {
 	console.log(data);
 	const deleteNews = async (id) => {
 		const res = await axios
-			.post(`${process.env.NEXT_PUBLIC_BASE_URL}/unfollow-news`, {
+			.post(`${process.env.PRODUCT}/unfollow-news`, {
 				email: localStorage.getItem('email'),
 				newsId: id,
 			})
@@ -39,9 +39,7 @@ function NewsFollowTable({ data, populateField }) {
 		// const { data } = useUserPopulate(data?.email, populateField);
 		const data = await axios
 			.get(
-				`${
-					process.env.NEXT_PUBLIC_BASE_URL
-				}/user-populate/${localStorage.getItem(
+				`${process.env.PRODUCT}/user-populate/${localStorage.getItem(
 					'email'
 				)}?populate=${populateField}`
 			)

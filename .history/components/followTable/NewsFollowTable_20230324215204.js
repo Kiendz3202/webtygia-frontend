@@ -29,7 +29,7 @@ function NewsFollowTable({ data, populateField, setFollowDataOffline }) {
 		const isEmail = JSON.parse(localStorage.getItem('email'));
 		if (isEmail) {
 			const res = await axios
-				.post(`${process.env.NEXT_PUBLIC_BASE_URL}/unfollow-news`, {
+				.post(`${process.env.PRODUCT}/unfollow-news`, {
 					email: localStorage.getItem('email'),
 					newsId: id,
 				})
@@ -43,7 +43,7 @@ function NewsFollowTable({ data, populateField, setFollowDataOffline }) {
 			const data = await axios
 				.get(
 					`${
-						process.env.NEXT_PUBLIC_BASE_URL
+						process.env.PRODUCT
 					}/user-populate/${localStorage.getItem(
 						'email'
 					)}?populate=${populateField}`

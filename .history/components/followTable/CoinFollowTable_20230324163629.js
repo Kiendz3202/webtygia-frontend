@@ -15,7 +15,7 @@ function CoinFollowTable({ data, populateField }) {
 	const deleteCoins = async (id) => {
 		try {
 			const res = await axios
-				.post(`${process.env.NEXT_PUBLIC_BASE_URL}/unfollow`, {
+				.post(`${process.env.PRODUCT}/unfollow`, {
 					email: localStorage.getItem('email'),
 					itemId: id,
 					category: 'coin',
@@ -32,7 +32,7 @@ function CoinFollowTable({ data, populateField }) {
 			const data = await axios
 				.get(
 					`${
-						process.env.NEXT_PUBLIC_BASE_URL
+						process.env.PRODUCT
 					}/user-populate/${localStorage.getItem(
 						'email'
 					)}?populate=${populateField}`

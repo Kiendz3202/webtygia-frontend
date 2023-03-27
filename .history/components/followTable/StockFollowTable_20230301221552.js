@@ -14,7 +14,7 @@ function StockFollowTable({ data, populateField }) {
 
 	const deleteCoins = async (id) => {
 		const res = await axios
-			.post(`${process.env.NEXT_PUBLIC_BASE_URL}/delete-coins`, {
+			.post(`${process.env.PRODUCT}/delete-coins`, {
 				email: localStorage.getItem('email'),
 				coinsId: id,
 			})
@@ -27,9 +27,7 @@ function StockFollowTable({ data, populateField }) {
 		// const { data } = useUserPopulate(data?.email, populateField);
 		const data = await axios
 			.get(
-				`${
-					process.env.NEXT_PUBLIC_BASE_URL
-				}/user-populate/${localStorage.getItem(
+				`${process.env.PRODUCT}/user-populate/${localStorage.getItem(
 					'email'
 				)}?populate=${populateField}`
 			)

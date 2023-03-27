@@ -5,7 +5,7 @@ export const useStockList = (nameExchange, page) => {
 	const fetchStocks = async (page) => {
 		return axios
 			.get(
-				`${process.env.NEXT_PUBLIC_BASE_URL}/stock/${nameExchange}?per_page=50&page=${page}`
+				`${process.env.PRODUCT}/stock/${nameExchange}?per_page=50&page=${page}`
 			)
 			.then((res) => res.data.data)
 			.catch((err) => console.log(err));
@@ -28,7 +28,7 @@ export const useStockListHnx = (nameExchange, page) => {
 	const fetchStocks = async (page) => {
 		return axios
 			.get(
-				`${process.env.NEXT_PUBLIC_BASE_URL}/stock/${nameExchange}?per_page=50&page=${page}`
+				`${process.env.PRODUCT}/stock/${nameExchange}?per_page=50&page=${page}`
 			)
 			.then((res) => res.data.data)
 			.catch((err) => console.log(err));
@@ -47,7 +47,7 @@ export const useStockListHose = (nameExchange, page) => {
 	const fetchStocks = async (page) => {
 		return axios
 			.get(
-				`${process.env.NEXT_PUBLIC_BASE_URL}/stock/${nameExchange}?per_page=50&page=${page}`
+				`${process.env.PRODUCT}/stock/${nameExchange}?per_page=50&page=${page}`
 			)
 			.then((res) => res.data.data)
 			.catch((err) => console.log(err));
@@ -66,7 +66,7 @@ export const useStockListHnx30 = (nameExchange, page) => {
 	const fetchStocks = async (page) => {
 		return axios
 			.get(
-				`${process.env.NEXT_PUBLIC_BASE_URL}/stock/${nameExchange}?per_page=50&page=${page}`
+				`${process.env.PRODUCT}/stock/${nameExchange}?per_page=50&page=${page}`
 			)
 			.then((res) => res.data.data)
 			.catch((err) => console.log(err));
@@ -85,7 +85,7 @@ export const useStockListVn30 = (nameExchange, page) => {
 	const fetchStocks = async (page) => {
 		return axios
 			.get(
-				`${process.env.NEXT_PUBLIC_BASE_URL}/stock/${nameExchange}?per_page=50&page=${page}`
+				`${process.env.PRODUCT}/stock/${nameExchange}?per_page=50&page=${page}`
 			)
 			.then((res) => res.data.data)
 			.catch((err) => console.log(err));
@@ -104,7 +104,7 @@ export const useStockListUpcom = (nameExchange, page) => {
 	const fetchStocks = async (page) => {
 		return axios
 			.get(
-				`${process.env.NEXT_PUBLIC_BASE_URL}/stock/${nameExchange}?per_page=50&page=${page}`
+				`${process.env.PRODUCT}/stock/${nameExchange}?per_page=50&page=${page}`
 			)
 			.then((res) => res.data.data)
 			.catch((err) => console.log(err));
@@ -122,7 +122,7 @@ export const useStockListUpcom = (nameExchange, page) => {
 export const useStockPriceDetail = (symbol) => {
 	const fetchStock = async () => {
 		return axios
-			.get(`${process.env.NEXT_PUBLIC_BASE_URL}/stock/${symbol}`)
+			.get(`${process.env.PRODUCT}/stock/${symbol}`)
 			.then((res) => res.data.data[0])
 			.catch((err) => console.log(err));
 	};
@@ -139,9 +139,7 @@ export const useStockPriceDetail = (symbol) => {
 export const useStockDescription = (symbol) => {
 	const fetchStock = async (symbol) => {
 		return axios
-			.get(
-				`${process.env.NEXT_PUBLIC_BASE_URL}/stock/description/${symbol}`
-			)
+			.get(`${process.env.PRODUCT}/stock/description/${symbol}`)
 			.then((res) => res.data)
 			.catch((err) => console.log(err));
 	};
@@ -158,9 +156,7 @@ export const useStockDescription = (symbol) => {
 export const useStockChart = (symbol, days) => {
 	const fetchStock = async () => {
 		return axios
-			.get(
-				`${process.env.NEXT_PUBLIC_BASE_URL}/stock/chart/${symbol}?days=${days}`
-			)
+			.get(`${process.env.PRODUCT}/stock/chart/${symbol}?days=${days}`)
 			.then((res) => res.data.data[0])
 			.catch((err) => console.log(err));
 	};
@@ -177,7 +173,7 @@ export const useStockChart = (symbol, days) => {
 export const useUsdToVnd = (symbol, days) => {
 	const fetchUsdToVnd = async () => {
 		return axios
-			.get(`${process.env.NEXT_PUBLIC_BASE_URL}/exchangeRate/usd-to-vnd`)
+			.get(`${process.env.PRODUCT}/exchangeRate/usd-to-vnd`)
 			.then((res) => res.data.data[0])
 			.catch((err) => console.log(err));
 	};
@@ -194,12 +190,9 @@ export const useUsdToVnd = (symbol, days) => {
 export const useUserStockReference = (email) => {
 	const fetchCoins = async () => {
 		return axios
-			.post(
-				`${process.env.NEXT_PUBLIC_BASE_URL}/coin/user-coin-reference`,
-				{
-					email,
-				}
-			)
+			.post(`${process.env.PRODUCT}/coin/user-coin-reference`, {
+				email,
+			})
 			.then((res) => res.data)
 			.catch((err) => console.log(err));
 	};

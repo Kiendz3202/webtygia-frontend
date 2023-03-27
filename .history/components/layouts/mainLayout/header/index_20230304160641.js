@@ -35,12 +35,9 @@ function Header() {
 		const delayDebounceFn = setTimeout(() => {
 			const fetchSearching = async () => {
 				const data = await axios
-					.post(
-						`${process.env.NEXT_PUBLIC_BASE_URL}/stock/user-stock-reference`,
-						{
-							email: localStorage.getItem('email'),
-						}
-					)
+					.post(`${process.env.PRODUCT}/stock/user-stock-reference`, {
+						email: localStorage.getItem('email'),
+					})
 					.then((res) => res.data)
 					.catch((err) => console.log(err));
 			};

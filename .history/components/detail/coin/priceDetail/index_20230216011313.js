@@ -19,13 +19,10 @@ function PriceDetail({ coin, descriptionData }) {
 		setEmail(localStorage.getItem('email'));
 		const fetchCoins = async (email, coinsId) => {
 			return axios
-				.post(
-					`${process.env.NEXT_PUBLIC_BASE_URL}/update-score-coins`,
-					{
-						email,
-						coinsId,
-					}
-				)
+				.post(`${process.env.PRODUCT}/update-score-coins`, {
+					email,
+					coinsId,
+				})
 				.then((res) => res.data)
 				.catch((err) => console.log(err));
 		};

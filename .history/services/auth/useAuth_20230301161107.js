@@ -4,7 +4,7 @@ import axios from 'axios';
 export const useLogin = async (body) => {
 	// const fetchCoins = async () => {
 	return axios
-		.post(`${process.env.NEXT_PUBLIC_BASE_URL}/login`, body)
+		.post(`${process.env.PRODUCT}/login`, body)
 		.then((res) => res.data.data)
 		.catch((err) => console.log(err));
 	// };
@@ -13,7 +13,7 @@ export const useLogin = async (body) => {
 export const useSignup = async (body) => {
 	// const fetchCoins = async () => {
 	return axios
-		.post(`${process.env.NEXT_PUBLIC_BASE_URL}/register`, body)
+		.post(`${process.env.PRODUCT}/register`, body)
 		.then((res) => res.data.data)
 		.catch((err) => console.log(err));
 	// };

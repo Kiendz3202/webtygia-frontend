@@ -25,7 +25,7 @@ const useCoinList = (page) => {
 const useCoinPriceDetail = (nameId) => {
 	const fetchCoins = async () => {
 		return axios
-			.get(`${process.env.NEXT_PUBLIC_BASE_URL}/coin/detail/${nameId}`)
+			.get(`${process.env.PRODUCT}/coin/detail/${nameId}`)
 			.then((res) => res.data.data[0])
 			.catch((err) => console.log(err));
 	};
@@ -42,9 +42,7 @@ const useCoinPriceDetail = (nameId) => {
 const useCoinDescription = (nameId) => {
 	const fetchCoins = async (nameId) => {
 		return axios
-			.get(
-				`${process.env.NEXT_PUBLIC_BASE_URL}/coin/description/${nameId}`
-			)
+			.get(`${process.env.PRODUCT}/coin/description/${nameId}`)
 			.then((res) => res.data)
 			.catch((err) => console.log(err));
 	};
@@ -61,9 +59,7 @@ const useCoinDescription = (nameId) => {
 const useCoinChart = (nameId, days) => {
 	const fetchCoins = async () => {
 		return axios
-			.get(
-				`${process.env.NEXT_PUBLIC_BASE_URL}/coin/chart/${nameId}?days=${days}`
-			)
+			.get(`${process.env.PRODUCT}/coin/chart/${nameId}?days=${days}`)
 			.then((res) => res.data.data[0].data)
 			.catch((err) => console.log(err));
 	};

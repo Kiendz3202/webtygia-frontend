@@ -45,7 +45,7 @@ function CoinPageView() {
 		console.log(localStorage.getItem('email'));
 		// try {
 		// 	const res = await axios
-		// 		.post(`${process.env.NEXT_PUBLIC_BASE_URL}/follow`, {
+		// 		.post(`${process.env.PRODUCT}/follow`, {
 		// 			email: localStorage.getItem('email'),
 		// 			itemId: id,
 		// 			category: 'coin',
@@ -59,7 +59,7 @@ function CoinPageView() {
 		// 	const user = await axios
 		// 		.get(
 		// 			`${
-		// 				process.env.NEXT_PUBLIC_BASE_URL
+		// 				process.env.PRODUCT
 		// 			}/user/${localStorage.getItem('email')}`
 		// 		)
 		// 		.then((res) => res.data.data[0]);
@@ -72,7 +72,7 @@ function CoinPageView() {
 	const deleteCoins = async (id) => {
 		try {
 			const res = await axios
-				.post(`${process.env.NEXT_PUBLIC_BASE_URL}/unfollow`, {
+				.post(`${process.env.PRODUCT}/unfollow`, {
 					email: localStorage.getItem('email'),
 					itemId: id,
 					category: 'coin',
@@ -88,9 +88,9 @@ function CoinPageView() {
 
 			const user = await axios
 				.get(
-					`${
-						process.env.NEXT_PUBLIC_BASE_URL
-					}/user/${localStorage.getItem('email')}`
+					`${process.env.PRODUCT}/user/${localStorage.getItem(
+						'email'
+					)}`
 				)
 				.then((res) => res.data.data[0]);
 			setUser(user);

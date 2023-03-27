@@ -8,7 +8,7 @@ export const fetchUpdateScoreAndView = async (
 ) => {
 	try {
 		const { data } = await axios.post(
-			`${process.env.NEXT_PUBLIC_BASE_URL}/update-score-coins`,
+			`${process.env.PRODUCT}/update-score-coins`,
 			{
 				email: JSON.parse(localStorage.getItem('email')),
 				itemId,

@@ -5,9 +5,7 @@ import { useQueryClient } from 'react-query';
 const useCoinList = () => {
 	const fetchCoins = async () => {
 		return axios
-			.get(
-				`${process.env.NEXT_PUBLIC_BASE_URL}/coin/markets?per_page=100&page=1`
-			)
+			.get(`${process.env.PRODUCT}/coin/markets?per_page=100&page=1`)
 			.then((res) => res.data.data.coinList)
 			.catch((err) => console.log(err));
 	};
@@ -24,7 +22,7 @@ const useCoinList = () => {
 const useCoinPriceDetail = (nameId) => {
 	const fetchCoins = async () => {
 		return axios
-			.get(`${process.env.NEXT_PUBLIC_BASE_URL}/coin/detail/${nameId}`)
+			.get(`${process.env.PRODUCT}/coin/detail/${nameId}`)
 			.then((res) => res.data.data[0])
 			.catch((err) => console.log(err));
 	};

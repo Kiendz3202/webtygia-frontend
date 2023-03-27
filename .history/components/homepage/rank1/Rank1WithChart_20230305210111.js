@@ -29,7 +29,7 @@ function Rank1WithChart({ data }) {
 			try {
 				const data = await axios
 					.get(
-						`${process.env.NEXT_PUBLIC_BASE_URL}/exchangeRate/usd-to-vnd`
+						`${process.env.PRODUCT}/exchangeRate/usd-to-vnd`
 					)
 					.then((res) => res.data);
 

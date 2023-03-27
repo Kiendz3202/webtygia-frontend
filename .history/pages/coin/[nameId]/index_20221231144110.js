@@ -52,7 +52,7 @@ import axios from 'axios';
 
 const fetchDescription = async (nameId) => {
 	return axios
-		.get(`${process.env.NEXT_PUBLIC_BASE_URL}/coin/description/${nameId}`)
+		.get(`${process.env.PRODUCT}/coin/description/${nameId}`)
 		.then((res) => res.data.data[0])
 		.catch((err) => console.log(err));
 };

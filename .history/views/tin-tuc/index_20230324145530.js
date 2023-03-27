@@ -45,7 +45,7 @@ function TinTucView() {
 
 	const saveNews = async (id) => {
 		const res = await axios
-			.post(`${process.env.NEXT_PUBLIC_BASE_URL}/follow-news`, {
+			.post(`${process.env.PRODUCT}/follow-news`, {
 				email: localStorage.getItem('email'),
 				newsId: id,
 			})
@@ -57,18 +57,14 @@ function TinTucView() {
 			});
 
 		const user = await axios
-			.get(
-				`${
-					process.env.NEXT_PUBLIC_BASE_URL
-				}/user/${localStorage.getItem('email')}`
-			)
+			.get(`${process.env.PRODUCT}/user/${localStorage.getItem('email')}`)
 			.then((res) => res.data.data[0]);
 		setUser(user);
 	};
 
 	const deleteNews = async (id) => {
 		const res = await axios
-			.post(`${process.env.NEXT_PUBLIC_BASE_URL}/unfollow-news`, {
+			.post(`${process.env.PRODUCT}/unfollow-news`, {
 				email: localStorage.getItem('email'),
 				newsId: id,
 			})
@@ -80,11 +76,7 @@ function TinTucView() {
 			});
 
 		const user = await axios
-			.get(
-				`${
-					process.env.NEXT_PUBLIC_BASE_URL
-				}/user/${localStorage.getItem('email')}`
-			)
+			.get(`${process.env.PRODUCT}/user/${localStorage.getItem('email')}`)
 			.then((res) => res.data.data[0]);
 		setUser(user);
 	};

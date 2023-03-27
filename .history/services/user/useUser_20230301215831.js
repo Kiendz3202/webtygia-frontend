@@ -6,7 +6,7 @@ const useUser = (email) => {
 	// let pagePagination = page || 1;
 	const fetchUser = async () => {
 		return axios
-			.get(`${process.env.NEXT_PUBLIC_BASE_URL}/user/${email}`)
+			.get(`${process.env.PRODUCT}/user/${email}`)
 			.then((res) => res.data.data[0])
 			.catch((err) => console.log(err));
 	};
@@ -28,7 +28,7 @@ const useUserPopulate = (populateField) => {
 	const fetchUser = async () => {
 		return axios
 			.get(
-				`${process.env.NEXT_PUBLIC_BASE_URL}/user-populate/${email}?populate=${populateField}`
+				`${process.env.PRODUCT}/user-populate/${email}?populate=${populateField}`
 			)
 			.then((res) => res.data.data[0])
 			.catch((err) => console.log(err));
@@ -47,9 +47,7 @@ const useUserPopulateSymbolStock = (email) => {
 	// let pagePagination = page || 1;
 	const fetchUser = async () => {
 		return axios
-			.get(
-				`${process.env.NEXT_PUBLIC_BASE_URL}/user-populate-symbol-stock/${email}`
-			)
+			.get(`${process.env.PRODUCT}/user-populate-symbol-stock/${email}`)
 			.then((res) => res.data.data[0])
 			.catch((err) => console.log(err));
 	};
@@ -72,7 +70,7 @@ const useUserFollowAndInterest = (email) => {
 	const fetchUser = async () => {
 		return axios
 			.post(
-				`${process.env.NEXT_PUBLIC_BASE_URL}/user-follow-and-interest/`,
+				`${process.env.PRODUCT}/user-follow-and-interest/`,
 				{ email },
 				{
 					headers: {

@@ -6,9 +6,7 @@ const useCoinList = (page) => {
 	// let pagePagination = page || 1;
 	const fetchCoins = async (page) => {
 		return axios
-			.get(
-				`${process.env.NEXT_PUBLIC_BASE_URL}/coin/markets?per_page=50&page=${page}`
-			)
+			.get(`${process.env.PRODUCT}/coin/markets?per_page=50&page=${page}`)
 			.then((res) => res.data.data)
 			.catch((err) => console.log(err));
 	};
@@ -25,7 +23,7 @@ const useCoinList = (page) => {
 const useCoinPriceDetail = (nameId) => {
 	const fetchCoins = async () => {
 		return axios
-			.get(`${process.env.NEXT_PUBLIC_BASE_URL}/coin/detail/${nameId}`)
+			.get(`${process.env.PRODUCT}/coin/detail/${nameId}`)
 			.then((res) => res.data.data[0])
 			.catch((err) => console.log(err));
 	};
@@ -42,9 +40,7 @@ const useCoinPriceDetail = (nameId) => {
 const useCoinDescription = (nameId) => {
 	const fetchCoins = async (nameId) => {
 		return axios
-			.get(
-				`${process.env.NEXT_PUBLIC_BASE_URL}/coin/description/${nameId}`
-			)
+			.get(`${process.env.PRODUCT}/coin/description/${nameId}`)
 			.then((res) => res.data)
 			.catch((err) => console.log(err));
 	};
@@ -61,9 +57,7 @@ const useCoinDescription = (nameId) => {
 const useCoinChart = (nameId, days) => {
 	const fetchCoins = async () => {
 		return axios
-			.get(
-				`${process.env.NEXT_PUBLIC_BASE_URL}/coin/chart/${nameId}?days=${days}`
-			)
+			.get(`${process.env.PRODUCT}/coin/chart/${nameId}?days=${days}`)
 			.then((res) => res.data.data[0].data)
 			.catch((err) => console.log(err));
 	};
@@ -80,7 +74,7 @@ const useCoinChart = (nameId, days) => {
 const useUpdateScoreCoin = (email, id) => {
 	const fetchCoins = async () => {
 		return axios
-			.post(`${process.env.NEXT_PUBLIC_BASE_URL}/update-score-coins`, {
+			.post(`${process.env.PRODUCT}/update-score-coins`, {
 				email,
 				coinsId: id,
 			})
@@ -100,12 +94,9 @@ const useUpdateScoreCoin = (email, id) => {
 const useUserCoinReference = (email) => {
 	const fetchCoins = async () => {
 		return axios
-			.post(
-				`${process.env.NEXT_PUBLIC_BASE_URL}/coin/user-coin-reference`,
-				{
-					email,
-				}
-			)
+			.post(`${process.env.PRODUCT}/coin/user-coin-reference`, {
+				email,
+			})
 			.then((res) => res.data)
 			.catch((err) => console.log(err));
 	};

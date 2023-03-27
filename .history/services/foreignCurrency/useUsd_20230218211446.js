@@ -1,7 +1,7 @@
 export const useUsd = (symbol) => {
 	const fetchStock = async () => {
 		return axios
-			.get(`${process.env.NEXT_PUBLIC_BASE_URL}/foreign-currency/usd`)
+			.get(`${process.env.PRODUCT}/foreign-currency/usd`)
 			.then((res) => res.data.data[0])
 			.catch((err) => console.log(err));
 	};

@@ -14,7 +14,7 @@ function CoinFollowTable({ data, populateField }) {
 
 	const deleteCoins = async (id) => {
 		// const res = await axios
-		// 	.post(`${process.env.NEXT_PUBLIC_BASE_URL}/delete-coins`, {
+		// 	.post(`${process.env.PRODUCT}/delete-coins`, {
 		// 		email: localStorage.getItem('email'),
 		// 		coinsId: id,
 		// 	})
@@ -28,7 +28,7 @@ function CoinFollowTable({ data, populateField }) {
 		// const data = await axios
 		// 	.get(
 		// 		`${
-		// 			process.env.NEXT_PUBLIC_BASE_URL
+		// 			process.env.PRODUCT
 		// 		}/user-populate/${localStorage.getItem(
 		// 			'email'
 		// 		)}?populate=${populateField}`
@@ -38,7 +38,7 @@ function CoinFollowTable({ data, populateField }) {
 		// console.log(123);
 		try {
 			const res = await axios
-				.post(`${process.env.NEXT_PUBLIC_BASE_URL}/unfollow`, {
+				.post(`${process.env.PRODUCT}/unfollow`, {
 					email: localStorage.getItem('email'),
 					itemId: id,
 					category: 'coin',
@@ -54,9 +54,9 @@ function CoinFollowTable({ data, populateField }) {
 
 			const user = await axios
 				.get(
-					`${
-						process.env.NEXT_PUBLIC_BASE_URL
-					}/user/${localStorage.getItem('email')}`
+					`${process.env.PRODUCT}/user/${localStorage.getItem(
+						'email'
+					)}`
 				)
 				.then((res) => res.data.data[0]);
 			setCoinData(user);

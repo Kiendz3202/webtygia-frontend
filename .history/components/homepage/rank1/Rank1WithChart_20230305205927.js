@@ -30,9 +30,7 @@ function Rank1WithChart({ data }) {
 		const fetchInitialRank1 = async () => {
 			try {
 				const data = await axios
-					.get(
-						`${process.env.NEXT_PUBLIC_BASE_URL}/exchangeRate/usd-to-vnd`
-					)
+					.get(`${process.env.PRODUCT}/exchangeRate/usd-to-vnd`)
 					.then((res) => res.data);
 
 				console.log(data.data);

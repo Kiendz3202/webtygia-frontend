@@ -34,11 +34,11 @@ function Hnx30StockView() {
 	const saveStocks = async (symbol) => {
 		try {
 			const idStockDetail = await axios
-				.get(`${process.env.NEXT_PUBLIC_BASE_URL}/stock/${symbol}`)
+				.get(`${process.env.PRODUCT}/stock/${symbol}`)
 				.then((res) => res.data.data[0]._id);
 
 			const res = await axios
-				.post(`${process.env.NEXT_PUBLIC_BASE_URL}/follow`, {
+				.post(`${process.env.PRODUCT}/follow`, {
 					email: localStorage.getItem('email'),
 					itemId: idStockDetail,
 					category: 'stock',
@@ -51,9 +51,9 @@ function Hnx30StockView() {
 
 			const user = await axios
 				.get(
-					`${
-						process.env.NEXT_PUBLIC_BASE_URL
-					}/user/${localStorage.getItem('email')}`
+					`${process.env.PRODUCT}/user/${localStorage.getItem(
+						'email'
+					)}`
 				)
 				.then((res) => res.data.data[0]);
 			setUser(user);
@@ -65,10 +65,10 @@ function Hnx30StockView() {
 	const deleteStocks = async (symbol) => {
 		try {
 			const idStockDetail = await axios
-				.get(`${process.env.NEXT_PUBLIC_BASE_URL}/stock/${symbol}`)
+				.get(`${process.env.PRODUCT}/stock/${symbol}`)
 				.then((res) => res.data.data[0]._id);
 			const res = await axios
-				.post(`${process.env.NEXT_PUBLIC_BASE_URL}/unfollow`, {
+				.post(`${process.env.PRODUCT}/unfollow`, {
 					email: localStorage.getItem('email'),
 					itemId: idStockDetail,
 					category: 'stock',
@@ -81,9 +81,9 @@ function Hnx30StockView() {
 
 			const user = await axios
 				.get(
-					`${
-						process.env.NEXT_PUBLIC_BASE_URL
-					}/user/${localStorage.getItem('email')}`
+					`${process.env.PRODUCT}/user/${localStorage.getItem(
+						'email'
+					)}`
 				)
 				.then((res) => res.data.data[0]);
 			setUser(user);

@@ -37,7 +37,7 @@ function Header() {
 			const fetchSearching = async () => {
 				try {
 					const data = await axios
-						.post(`${process.env.NEXT_PUBLIC_BASE_URL}/search`, {
+						.post(`${process.env.PRODUCT}/search`, {
 							payload: searchTerm,
 						})
 						.then((res) => res.data);

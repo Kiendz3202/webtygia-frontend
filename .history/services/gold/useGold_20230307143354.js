@@ -4,7 +4,7 @@ import axios from 'axios';
 export const useGold = (name) => {
 	const fetchCoins = async () => {
 		return axios
-			.get(`${process.env.NEXT_PUBLIC_BASE_URL}/gold/${name}`)
+			.get(`${process.env.PRODUCT}/gold/${name}`)
 			.then((res) => res.data.data)
 			.catch((err) => console.log(err));
 	};

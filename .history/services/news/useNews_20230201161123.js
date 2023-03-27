@@ -6,9 +6,7 @@ const useNewsList = (page) => {
 	// let pagePagination = page || 1;
 	const fetchCoins = async (page) => {
 		return axios
-			.get(
-				`${process.env.NEXT_PUBLIC_BASE_URL}/coin/markets?per_page=50&page=${page}`
-			)
+			.get(`${process.env.PRODUCT}/coin/markets?per_page=50&page=${page}`)
 			.then((res) => res.data.data)
 			.catch((err) => console.log(err));
 	};

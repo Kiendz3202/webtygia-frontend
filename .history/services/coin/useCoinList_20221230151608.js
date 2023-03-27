@@ -5,9 +5,7 @@ import { useQueryClient } from 'react-query';
 const useCoinList = () => {
 	const fetchCoins = async () => {
 		return axios
-			.get(
-				`${process.env.NEXT_PUBLIC_BASE_URL}/coin/markets?per_page=100&page=1`
-			)
+			.get(`${process.env.PRODUCT}/coin/markets?per_page=100&page=1`)
 			.then((res) => res.data.data.coinList)
 			.catch((err) => console.log(err));
 	};

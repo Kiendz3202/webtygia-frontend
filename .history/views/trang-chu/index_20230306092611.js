@@ -94,7 +94,7 @@ function TrangChuView() {
 					try {
 						const data = await axios
 							.get(
-								`${process.env.NEXT_PUBLIC_BASE_URL}/list-rank2-without-chart`
+								`${process.env.PRODUCT}/list-rank2-without-chart`
 							)
 							.then((res) => res.data);
 

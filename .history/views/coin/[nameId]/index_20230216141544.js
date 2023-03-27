@@ -31,7 +31,7 @@ function CoinPageDetailView({ descriptionData }) {
 		const updateScoreCoin = async (email, coinsId) => {
 			try {
 				const { data } = await axios.post(
-					`${process.env.NEXT_PUBLIC_BASE_URL}/update-score-coins`,
+					`${process.env.PRODUCT}/update-score-coins`,
 					{
 						email,
 						coinsId,
