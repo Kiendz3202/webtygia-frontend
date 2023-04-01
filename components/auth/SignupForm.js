@@ -3,7 +3,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import Loading from '@components/UI/Loading';
 import ImageIcon from '@mui/icons-material/Image';
-import { useSignup } from '@services/auth/useAuth';
+import { fetchSignup } from '@services/auth/useAuth';
 import { useRouter } from 'next/router';
 
 function SignupForm() {
@@ -60,7 +60,7 @@ function SignupForm() {
 		try {
 			setIsLoading(true);
 
-			const data = await useSignup(dataForm);
+			const data = await fetchSignup(dataForm);
 			console.log(data);
 
 			if (data.status === 'fail') {

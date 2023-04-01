@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import Loading from '@components/UI/Loading';
 import ImageIcon from '@mui/icons-material/Image';
+import { fetchSignup } from '@services/auth/useAuth';
+import { useRouter } from 'next/router';
 
 function SignupForm() {
 	const [passwordIsHidden, setPasswordIshidden] = useState(true);
@@ -14,26 +17,29 @@ function SignupForm() {
 	const [isLoading, setIsLoading] = useState(false);
 	const [errorMessage, setErrorMessage] = useState('');
 
+	const router = useRouter();
+
 	const changePasswordHidden = () => {
 		setPasswordIshidden((prev) => !prev);
 	};
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		console.log('submit');
 
-		const dataForm = new FormData();
-
-		if (nameUser.length < 2 || nameUser.length > 25) {
-			setErrorMessage('Độ dài tên phải từ 2 đến 25 ký tự');
+		if (nameUser.length < 2 || nameUser.length > 20) {
+			setErrorMessage('Độ dài tên phải từ 2 đến 20 ký tự');
+			return;
 		}
 		if (!image) {
 			setErrorMessage('Bạn chưa chọn avatar');
+			return;
 		}
 		if (
 			email === '' ||
 			!email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
 		) {
 			setErrorMessage('Email không hợp lệ');
+			return;
 		}
 		if (
 			password !== confirmPassword ||
@@ -41,9 +47,33 @@ function SignupForm() {
 			confirmPassword.length < 6
 		) {
 			setErrorMessage('Mật khẩu phải có 6 ký tự trở lên');
+			return;
 		}
 
-		console.log({ nameUser, email, password });
+		const dataForm = new FormData();
+
+		dataForm.append('name', nameUser);
+		dataForm.append('email', email);
+		dataForm.append('password', password);
+		dataForm.append('avatar', image);
+
+		try {
+			setIsLoading(true);
+
+			const data = await fetchSignup(dataForm);
+			console.log(data);
+
+			if (data.status === 'fail') {
+				setErrorMessage(data.message);
+				setIsLoading(false);
+				return;
+			}
+			setIsLoading(false);
+			// router.reload(window.location.pathname);
+		} catch (error) {
+			setErrorMessage('Tạo tài khoản thất bại, vui lòng thử lại!');
+			setIsLoading(false);
+		}
 	};
 
 	const handleImage = (e) => {
@@ -196,13 +226,17 @@ function SignupForm() {
 				</div>
 			</div>
 			<div className="mt-[3rem]">
-				<button
-					className="w-full h-[40px] text-center text-white-text text-[15px] bg-[#111727] rounded-[8px]"
-					type="submit"
-				>
-					Đăng ký
-				</button>
-				<span className=" text-red-600 text-[12px] mt-[4px]">
+				{!isLoading ? (
+					<button
+						className="w-full h-[40px] text-center text-white-text text-[15px] bg-[#111727] rounded-[8px]"
+						type="submit"
+					>
+						Đăng ký
+					</button>
+				) : (
+					<Loading />
+				)}
+				<span className="block text-red-600 text-[12px] mt-[4px]">
 					{errorMessage}
 				</span>
 			</div>
