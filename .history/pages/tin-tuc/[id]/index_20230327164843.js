@@ -10,7 +10,7 @@ export default NewsDetailPage;
 
 export async function getStaticPaths() {
 	const res = await axios
-		.get(`${process.env.PRODUCT_URL}/get-all-news`)
+		.get(`${process.env.NEXT_PUBLIC_PRODUCT_URL}/get-all-news`)
 		.then((res) => res.data.data);
 	const paths = res.map((post) => ({
 		params: { id: post?.timeUpdate.toString() },
@@ -22,7 +22,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
 	const id = params.id;
 	const data = await axios
-		.get(`${process.env.PRODUCT_URL}/get-detail-news/${id}`)
+		.get(`${process.env.NEXT_PUBLIC_PRODUCT_URL}/get-detail-news/${id}`)
 		.then((data) => data.data.data[0]);
 
 	return {

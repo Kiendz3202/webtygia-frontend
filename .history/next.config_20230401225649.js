@@ -5,6 +5,9 @@ const nextConfig = {
 	// images: {
 	// 	domains: ['localhost'],
 	// },
+	env: {
+		PRODUCT_URL: 'https://tygia.ansecurity.net/api/v1',
+	},
 };
 
 module.exports = nextConfig;
