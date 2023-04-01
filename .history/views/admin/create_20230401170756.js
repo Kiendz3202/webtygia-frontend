@@ -75,10 +75,20 @@ function CreateNewsView() {
 
 	const { data: userFromDb } = useUser(email);
 
+	// useEffect(() => {
+	// 	const role = userFromDb?.role;
+	// 	if (role === 'user') {
+	// 		router.push('/');
+	// 	}
+	// }, [typeof window, userFromDb]);
+
+	// useEffect(() => {
+	// 	setEmail(localStorage.getItem('email'));
+	// }, [typeof window]);
 	useEffect(() => {
 		const role = localStorage.getItem('role');
 		if (role !== 'admin') {
-			router.back();
+			router.push('/');
 		} else {
 			setIsAdmin(true);
 		}

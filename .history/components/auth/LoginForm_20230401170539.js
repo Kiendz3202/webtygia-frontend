@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import UndoIcon from '@mui/icons-material/Undo';
+import Loading from '@components/UI/Loading';
 import { useLogin } from '@services/auth/useAuth';
 import { useRouter } from 'next/router';
+import axios from 'axios';
+import GoogleButton from 'react-google-button';
 
 function LoginForm() {
 	const [email, setEmail] = useState();
@@ -17,25 +21,25 @@ function LoginForm() {
 		setPasswordIshidden((prev) => !prev);
 	};
 	const handleSubmit = async (e) => {
-		e.preventDefault();
+		// e.preventDefault();
 
-		const data = await useLogin({
-			email,
-			password,
-		});
+		// const data = await useLogin({
+		// 	email,
+		// 	password,
+		// });
 
-		if (!data) {
-			return;
-		}
+		// if (!data) {
+		// 	return;
+		// }
 
-		localStorage.setItem('accessToken', data.accessToken);
-		localStorage.setItem('name', data.user.name);
-		localStorage.setItem('avatar', data.user.avatar);
-		localStorage.setItem('email', data.user.email);
-		localStorage.setItem('_id', data.user._id);
+		// localStorage.setItem('accessToken', data.accessToken);
+		// localStorage.setItem('name', data.user.name);
+		// localStorage.setItem('avatar', data.user.avatar);
+		// localStorage.setItem('email', data.user.email);
+		// localStorage.setItem('_id', data.user._id);
 
-		router.push('/');
-		console.log(data);
+		// router.push('/');
+		// console.log(data);
 
 		e.preventDefault();
 		console.log('submit');
@@ -54,27 +58,32 @@ function LoginForm() {
 
 		const dataForm = new FormData();
 
-		dataForm.append('name', nameUser);
 		dataForm.append('email', email);
 		dataForm.append('password', password);
-		dataForm.append('avatar', image);
 
 		try {
 			setIsLoading(true);
 
-			const data = await useSignup(dataForm);
+			const data = await useLogin(dataForm);
+			console.log(data);
 
-			if (!data) {
-				setErrorMessage('Tạo tài khoản thất bại, vui lòng thử lại!');
+			if (data.status === 'fail') {
+				console.log('1');
+				setErrorMessage(data.message);
 				setIsLoading(false);
-				console.log('hi');
 				return;
 			}
 			setIsLoading(false);
-			router.reload(window.location.pathname);
-			console.log(data);
+			localStorage.setItem('accessToken', data.data.accessToken);
+			localStorage.setItem('name', data.data.user.name);
+			localStorage.setItem('avatar', data.data.user.avatar);
+			localStorage.setItem('email', data.data.user.email);
+			localStorage.setItem('_id', data.data.user._id);
+			localStorage.setItem('role', data.data.user.role);
+
+			router.push('/');
 		} catch (error) {
-			setErrorMessage('Tạo tài khoản thất bại, vui lòng thử lại!');
+			setErrorMessage('Đăng nhập thất bại, vui lòng thử lại!');
 			setIsLoading(false);
 		}
 	};
@@ -90,6 +99,42 @@ function LoginForm() {
 		setErrorMessage('');
 		setPassword(e.target.value.trim());
 		// }
+	};
+
+	const LoginByGoogle = async () => {
+		// const fetchAuthUser = async () => {
+		// 	const response = await axios
+		// 		.get('http:localhost:5000/auth/user')
+		// 		.catch((err) => console.log(err));
+		// 	if (response && response.data) {
+		// 		console.log(response.data);
+		// 	}
+		// };
+		// let timer = null;
+		// function timeout(ms) {
+		// 	return new Promise((resolve) => setTimeout(resolve, ms));
+		// }
+		// const newWindow = window.open(
+		// 	'http://localhost:5000/auth/google',
+		// 	'_blank',
+		// 	'width:500,height:600'
+		// );
+
+		// if (newWindow) {
+		// 	timer = setInterval(async () => {
+		// 		if (newWindow.closed) {
+		// 			console.log("Yay we're authenticated");
+		// 			// fetchAuthUser();
+		// 			if (timer) clearInterval(timer);
+		// 		}
+		// 	}, 500);
+		// }
+		router.replace(`http://localhost:5000/auth/google`);
+		// router.replace(`https://tygia.ansecurity.net/auth/google`);
+	};
+
+	const handlePushToHomePage = () => {
+		router.push('/trang-chu');
 	};
 	return (
 		<form onSubmit={handleSubmit} className="mt-[3rem]">
@@ -134,12 +179,36 @@ function LoginForm() {
 				</div>
 			</div>
 			<div className="mt-[3rem]">
-				<button
-					className="w-full h-[40px] text-center text-white-text text-[15px] bg-[#111727] rounded-[8px]"
-					type="submit"
-				>
-					Đăng nhập
-				</button>
+				{!isLoading ? (
+					<button
+						className="w-full h-[40px] text-center text-white-text text-[15px] bg-[#111727] rounded-[8px]"
+						type="submit"
+					>
+						Đăng nhập
+					</button>
+				) : (
+					<Loading />
+				)}
+				<span className="block text-red-600 text-[12px] mt-[4px]">
+					{errorMessage}
+				</span>
+			</div>
+			<div className="">
+				<div className="text-center mt-[20px] text-[14px]">
+					Hoặc đăng nhập với
+				</div>
+				<div className="flex justify-center mt-[20px]">
+					<GoogleButton onClick={LoginByGoogle} />
+				</div>
+			</div>
+			<div
+				onClick={handlePushToHomePage}
+				className="text-center mt-[40px] text-[14px] border-b border-grey-boder w-fit mx-auto text-black-text font-medium cursor-pointer hover:opacity-80"
+			>
+				<span>
+					<UndoIcon />
+				</span>
+				Trang chủ
 			</div>
 		</form>
 	);

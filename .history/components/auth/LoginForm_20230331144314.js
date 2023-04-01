@@ -79,7 +79,6 @@ function LoginForm() {
 			localStorage.setItem('avatar', data.data.user.avatar);
 			localStorage.setItem('email', data.data.user.email);
 			localStorage.setItem('_id', data.data.user._id);
-			localStorage.setItem('role', data.data.user.role);
 
 			router.push('/');
 		} catch (error) {
@@ -129,8 +128,7 @@ function LoginForm() {
 		// 		}
 		// 	}, 500);
 		// }
-		// router.replace(`http://localhost:5000/auth/google`);
-		router.replace(`https://tygia.ansecurity.net/auth/google`);
+		router.replace(`${process.env.NEXT_PUBLIC_PRODUCT_URL}/auth/google`);
 	};
 
 	const handlePushToHomePage = () => {
@@ -205,10 +203,10 @@ function LoginForm() {
 				onClick={handlePushToHomePage}
 				className="text-center mt-[40px] text-[14px] border-b border-grey-boder w-fit mx-auto text-black-text font-medium cursor-pointer hover:opacity-80"
 			>
+				Trang chủ{' '}
 				<span>
 					<UndoIcon />
 				</span>
-				Trang chủ
 			</div>
 		</form>
 	);

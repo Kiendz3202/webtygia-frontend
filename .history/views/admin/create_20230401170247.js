@@ -50,7 +50,6 @@ const formats = [
 
 function CreateNewsView() {
 	const [email, setEmail] = useState();
-	const [isAdmin, setIsAdmin] = useState(false);
 	const [title, setTitle] = useState('');
 
 	const [description, setDescription] = useState('');
@@ -76,12 +75,14 @@ function CreateNewsView() {
 	const { data: userFromDb } = useUser(email);
 
 	useEffect(() => {
-		const role = localStorage.getItem('role');
-		if (role !== 'admin') {
-			router.back();
-		} else {
-			setIsAdmin(true);
+		const role = userFromDb?.role;
+		if (role === 'user') {
+			router.push('/');
 		}
+	}, [typeof window, userFromDb]);
+
+	useEffect(() => {
+		setEmail(localStorage.getItem('email'));
 	}, [typeof window]);
 
 	// const { data, isLoading, isError, error, isFetching } =
@@ -170,131 +171,123 @@ function CreateNewsView() {
 	return (
 		//image, title,timestamps
 		<MainLayout>
-			{isAdmin && (
-				<div className="mt-16 max-w-[1440px] mx-auto px-[1rem]">
-					<h3 className="pt-8 pb-4 text-2xl font-bold">
-						Tiêu đề Blog:
-					</h3>
-					<input
-						className="border border-black/20 h-12 w-full px-2 text-lg outline-none"
-						type="text"
-						value={title}
-						placeholder="Nhập tiêu đề..."
-						onChange={(e) => setTitle(e.target.value)}
-					/>
-					<h3 className="pt-8 pb-4 text-2xl font-bold">
-						Ảnh bài viết:
-					</h3>
-					<input
-						className="border border-black/20 h-12 w-full px-2 text-lg outline-none"
-						type="file"
-						// value={image}
-						ref={selectedFileRef}
-						onChange={handleImage}
-					/>
-					<h3 className="pt-8 pb-4 text-2xl font-bold">Mô tả:</h3>
-					<input
-						className="border border-black/20 h-12 w-full px-2 text-lg outline-none"
-						type="text"
-						value={description}
-						placeholder="Nhập mô tả..."
-						onChange={(e) => setDescription(e.target.value)}
-					/>
-					<h3 className="pt-8 pb-4 text-2xl font-bold">Keyword:</h3>
-					<input
-						className="border border-black/20 h-12 w-full px-2 text-lg outline-none"
-						type="text"
-						value={keyword}
-						placeholder="Có thể có nhiều keyword, ngăn cách nhau bằng dấu ',' ví dụ: giavang, giavangmoinhat"
-						onChange={(e) => setKeyword(e.target.value)}
-					/>
-					<h3 className="pt-8 pb-4 text-2xl font-bold">
-						Link bài viết gốc(nếu có):
-					</h3>
-					<input
-						className="border border-black/20 h-12 w-full px-2 text-lg outline-none"
-						type="text"
-						value={originSource}
-						placeholder="Nhập link bài viêt gốc..."
-						onChange={(e) => setOriginSource(e.target.value)}
-					/>
-					<h3 className="pt-8 pb-4 text-2xl font-bold">
-						Trích dẫn, tên nguồn, không phải link(nếu có):
-					</h3>
-					<input
-						className="border border-black/20 h-12 w-full px-2 text-lg outline-none"
-						type="text"
-						value={quotation}
-						placeholder="Nhập tên nguồn..."
-						onChange={(e) => setQuotation(e.target.value)}
-					/>
-					<h3 className="pt-8 pb-4 text-2xl font-bold">Thể loại:</h3>
-					<input
-						className="border border-black/20 h-12 w-full px-2 text-lg outline-none"
-						type="text"
-						value={category}
-						placeholder="Có thể có nhiều thể loại, ngăn cách nhau bằng dấu ',' ví dụ: vàng, cổ phiếu"
-						onChange={(e) => setCategory(e.target.value)}
-					/>
-					<h3 className="pt-8 pb-4 text-2xl font-bold">Tag:</h3>
-					<input
-						className="border border-black/20 h-12 w-full px-2 text-lg outline-none"
-						type="text"
-						value={tag}
-						placeholder="Có thể có nhiều hastag, ngăn cách nhau bằng dấu ',' ví dụ: #giavang, #giavangsjcmoinhat"
-						onChange={(e) => setTag(e.target.value)}
-					/>
-					<h3 className="mt-8 pb-4 text-2xl font-bold">
-						Nội dung Blog:
-					</h3>
-					<ReactQuill
-						theme="snow"
-						modules={modules}
-						formats={formats}
-						placeholder="Nhập văn bản..."
-						value={content}
-						onChange={setContent}
-					/>
-					<div className="my-12">
-						<button
-							className=" bg-blue-text w-36 h-12 flex-center text-xl font-semibold text-white rounded-md hover:opacity-95 duration-100"
-							onClick={() => {
-								// if (status === 'idle') {
-								createBlog();
-								// 	return;
-								// }
-							}}
-						>
-							{/* idle, loading, succeeded, failed */}
-							{/* {status === 'idle' && <span>Tạo Blog</span>}
+			<div className="mt-16 max-w-[1440px] mx-auto px-[1rem]">
+				<h3 className="pt-8 pb-4 text-2xl font-bold">Tiêu đề Blog:</h3>
+				<input
+					className="border border-black/20 h-12 w-full px-2 text-lg outline-none"
+					type="text"
+					value={title}
+					placeholder="Nhập tiêu đề..."
+					onChange={(e) => setTitle(e.target.value)}
+				/>
+				<h3 className="pt-8 pb-4 text-2xl font-bold">Ảnh bài viết:</h3>
+				<input
+					className="border border-black/20 h-12 w-full px-2 text-lg outline-none"
+					type="file"
+					// value={image}
+					ref={selectedFileRef}
+					onChange={handleImage}
+				/>
+				<h3 className="pt-8 pb-4 text-2xl font-bold">Mô tả:</h3>
+				<input
+					className="border border-black/20 h-12 w-full px-2 text-lg outline-none"
+					type="text"
+					value={description}
+					placeholder="Nhập mô tả..."
+					onChange={(e) => setDescription(e.target.value)}
+				/>
+				<h3 className="pt-8 pb-4 text-2xl font-bold">Keyword:</h3>
+				<input
+					className="border border-black/20 h-12 w-full px-2 text-lg outline-none"
+					type="text"
+					value={keyword}
+					placeholder="Có thể có nhiều keyword, ngăn cách nhau bằng dấu ',' ví dụ: giavang, giavangmoinhat"
+					onChange={(e) => setKeyword(e.target.value)}
+				/>
+				<h3 className="pt-8 pb-4 text-2xl font-bold">
+					Link bài viết gốc(nếu có):
+				</h3>
+				<input
+					className="border border-black/20 h-12 w-full px-2 text-lg outline-none"
+					type="text"
+					value={originSource}
+					placeholder="Nhập link bài viêt gốc..."
+					onChange={(e) => setOriginSource(e.target.value)}
+				/>
+				<h3 className="pt-8 pb-4 text-2xl font-bold">
+					Trích dẫn, tên nguồn, không phải link(nếu có):
+				</h3>
+				<input
+					className="border border-black/20 h-12 w-full px-2 text-lg outline-none"
+					type="text"
+					value={quotation}
+					placeholder="Nhập tên nguồn..."
+					onChange={(e) => setQuotation(e.target.value)}
+				/>
+				<h3 className="pt-8 pb-4 text-2xl font-bold">Thể loại:</h3>
+				<input
+					className="border border-black/20 h-12 w-full px-2 text-lg outline-none"
+					type="text"
+					value={category}
+					placeholder="Có thể có nhiều thể loại, ngăn cách nhau bằng dấu ',' ví dụ: vàng, cổ phiếu"
+					onChange={(e) => setCategory(e.target.value)}
+				/>
+				<h3 className="pt-8 pb-4 text-2xl font-bold">Tag:</h3>
+				<input
+					className="border border-black/20 h-12 w-full px-2 text-lg outline-none"
+					type="text"
+					value={tag}
+					placeholder="Có thể có nhiều hastag, ngăn cách nhau bằng dấu ',' ví dụ: #giavang, #giavangsjcmoinhat"
+					onChange={(e) => setTag(e.target.value)}
+				/>
+				<h3 className="mt-8 pb-4 text-2xl font-bold">Nội dung Blog:</h3>
+				<ReactQuill
+					theme="snow"
+					modules={modules}
+					formats={formats}
+					placeholder="Nhập văn bản..."
+					value={content}
+					onChange={setContent}
+				/>
+				<div className="my-12">
+					<button
+						className=" bg-blue-text w-36 h-12 flex-center text-xl font-semibold text-white rounded-md hover:opacity-95 duration-100"
+						onClick={() => {
+							// if (status === 'idle') {
+							createBlog();
+							// 	return;
+							// }
+						}}
+					>
+						{/* idle, loading, succeeded, failed */}
+						{/* {status === 'idle' && <span>Tạo Blog</span>}
 						{status === 'loading' && <span>Loading...</span>}
 						{status === 'succeeded' && <span>Tạo thành công</span>}
 						{status === 'failed' && <span>Tạo thất bại</span>} */}
-							create
-						</button>
-					</div>
-					<div className="ql-snow text-[18px]">
-						<div
-							className="ql-editor link:"
-							style={
-								{
-									// padding: 0,
-									// lineHeight: '1.6rem',
-									// fontWeight: '300',
-								}
+						create
+					</button>
+				</div>
+				<div className="ql-snow text-[18px]">
+					<div
+						className="ql-editor link:"
+						style={
+							{
+								// padding: 0,
+								// lineHeight: '1.6rem',
+								// fontWeight: '300',
 							}
-						>
-							<h1>{title}</h1>
-							<div>
-								<img src={selectedFile} />
-							</div>
-							<div
-								dangerouslySetInnerHTML={{ __html: content }}
-							></div>
+						}
+					>
+						<h1>{title}</h1>
+						<div>
+							<img src={selectedFile} />
 						</div>
+						<div
+							dangerouslySetInnerHTML={{ __html: content }}
+						></div>
 					</div>
 				</div>
-			)}
+			</div>
 		</MainLayout>
 	);
 }
