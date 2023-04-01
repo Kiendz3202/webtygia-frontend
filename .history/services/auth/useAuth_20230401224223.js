@@ -1,11 +1,11 @@
 import { useQuery } from 'react-query';
 import axios from 'axios';
 
-export const useLogin = async (body) => {
+export const fetchLogin = async (body) => {
 	// const fetchCoins = async () => {
 	return axios
-		.post(`${process.env.PRODUCT}/login`, body)
-		.then((res) => res.data.data)
+		.post(`${process.env.NEXT_PUBLIC_PRODUCT_URL}/login`, body)
+		.then((res) => res.data)
 		.catch((err) => console.log(err));
 	// };
 };
@@ -13,8 +13,8 @@ export const useLogin = async (body) => {
 export const useSignup = async (body) => {
 	// const fetchCoins = async () => {
 	return axios
-		.post(`${process.env.PRODUCT}/register`, body)
-		.then((res) => res.data.data)
+		.post(`${process.env.NEXT_PUBLIC_PRODUCT_URL}/register`, body)
+		.then((res) => res.data)
 		.catch((err) => console.log(err));
 	// };
 };
