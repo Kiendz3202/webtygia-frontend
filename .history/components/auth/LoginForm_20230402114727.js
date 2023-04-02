@@ -103,7 +103,7 @@ function LoginForm() {
 
 	const LoginByGoogle = async () => {
 		// router.replace(`http://localhost:5000/auth/google`);
-		router.replace(`${process.env.NEXT_PUBLIC_PRODUCT_URL}/auth/google`);
+		router.replace(`https://apitygia.ansecurity.net/auth/google`);
 	};
 
 	const handlePushToHomePage = () => {

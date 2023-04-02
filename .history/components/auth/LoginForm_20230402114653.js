@@ -102,8 +102,35 @@ function LoginForm() {
 	};
 
 	const LoginByGoogle = async () => {
+		// const fetchAuthUser = async () => {
+		// 	const response = await axios
+		// 		.get('http:localhost:5000/auth/user')
+		// 		.catch((err) => console.log(err));
+		// 	if (response && response.data) {
+		// 		console.log(response.data);
+		// 	}
+		// };
+		// let timer = null;
+		// function timeout(ms) {
+		// 	return new Promise((resolve) => setTimeout(resolve, ms));
+		// }
+		// const newWindow = window.open(
+		// 	'http://localhost:5000/auth/google',
+		// 	'_blank',
+		// 	'width:500,height:600'
+		// );
+
+		// if (newWindow) {
+		// 	timer = setInterval(async () => {
+		// 		if (newWindow.closed) {
+		// 			console.log("Yay we're authenticated");
+		// 			// fetchAuthUser();
+		// 			if (timer) clearInterval(timer);
+		// 		}
+		// 	}, 500);
+		// }
 		// router.replace(`http://localhost:5000/auth/google`);
-		router.replace(`${process.env.NEXT_PUBLIC_PRODUCT_URL}/auth/google`);
+		router.replace(`https://apitygia.ansecurity.net/auth/google`);
 	};
 
 	const handlePushToHomePage = () => {
