@@ -49,7 +49,7 @@ function ExchangeRate({ data }) {
 								/>
 							</div>
 							<div className=" w-[6rem] mx-[1rem] text-center text-[2rem] ">
-								{data?.symbol.toUpperCase()}
+								{data?.symbol?.toUpperCase()}
 							</div>
 						</div>
 						<div className="  items-center w-[3rem] ml-[0.2rem] ">

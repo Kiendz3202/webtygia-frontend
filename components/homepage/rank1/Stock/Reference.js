@@ -26,11 +26,11 @@ function Reference({ referenceRank1 }) {
 							className="flex flex-col px-[20px] py-[10px]"
 						>
 							<Link
-								href={`/co-phieu/${item.detail.symbol}`}
+								href={`/co-phieu/${item?.detail?.symbol}`}
 								target="_blank"
 							>
 								<p className="text-[16px] font-medium border-b border-grey-boder hover:opacity-80">
-									{item.detail.symbol.toUpperCase()}
+									{item?.detail?.symbol.toUpperCase()}
 								</p>
 							</Link>
 							<span className=" text-blue-text text-[22px] font-medium mt-[7px] mb-[6px]">

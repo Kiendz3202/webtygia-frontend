@@ -3,34 +3,37 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
-function Reference() {
-	const [email, setEmail] = useState();
+function Reference({ referenceRank1 }) {
 	const [reference, setReference] = useState([]);
 	const { data, isLoading, isError, error, isFetching } =
-		useUserCoinReference(email);
+		useUserCoinReference();
 
 	useEffect(() => {
-		setEmail(localStorage.getItem('email'));
-		if (data.data) {
-			// const arr = data.data.sort(({age:a}, {age:b}) => b-a)
-			setReference(data?.data);
+		if (data?.data) {
+			const arr = data.data.sort(({ score: a }, { score: b }) => b - a);
+			setReference(arr.slice(1, 5));
 		}
 	}, [data, typeof window]);
-	console.log(data);
+	// console.log(referenceRank1);
 	return (
 		<div>
 			<p className="text-[24px] font-semibold">So sánh với</p>
 			<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 mt-[2rem] bg-grey-4 rounded-[10px] h-[210px] lg:h-[105px]">
-				{reference &&
-					reference.map((item, index) => (
+				{referenceRank1 &&
+					referenceRank1.slice(0, 4).map((item, index) => (
 						<div
 							key={index}
 							className="flex flex-col px-[20px] py-[10px]"
 						>
-							<p className="text-[16px] font-medium border-b border-grey-boder">
-								{item.detail.name}(
-								{item.detail.symbol.toUpperCase()})
-							</p>
+							<Link
+								href={`/coin/${item.detail.nameId}`}
+								target="_blank"
+							>
+								<p className="text-[16px] font-medium border-b border-grey-boder hover:opacity-80">
+									{item?.detail?.name}(
+									{item?.detail?.symbol?.toUpperCase()})
+								</p>
+							</Link>
 							<span className=" text-blue-text text-[22px] font-medium mt-[7px] mb-[6px]">
 								${item.detail.currentPrice}
 							</span>

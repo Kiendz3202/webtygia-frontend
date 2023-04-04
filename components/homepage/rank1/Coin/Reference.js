@@ -30,8 +30,8 @@ function Reference({ referenceRank1 }) {
 								target="_blank"
 							>
 								<p className="text-[16px] font-medium border-b border-grey-boder hover:opacity-80">
-									{item.detail.name}(
-									{item.detail.symbol.toUpperCase()})
+									{item?.detail?.name}(
+									{item?.detail?.symbol?.toUpperCase()})
 								</p>
 							</Link>
 							<span className=" text-blue-text text-[22px] font-medium mt-[7px] mb-[6px]">
