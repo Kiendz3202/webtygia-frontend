@@ -115,7 +115,7 @@ function HnxStockView() {
 							Báo giá cổ phiếu chứng khoán
 						</h1>
 						<div>
-							{/* <TopPreviewStock /> */}
+							<TopPreviewStock />
 							{/* <SimpleChartCanvas /> */}
 						</div>
 						<div className="overflow-x-auto w-full">

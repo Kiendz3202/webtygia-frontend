@@ -82,12 +82,7 @@ function CreateNewsView() {
 		// } else {
 		// 	setIsAdmin(true);
 		// }
-		if (userFromDb && userFromDb?.role !== 'admin') {
-			router.back();
-		}
-		if (userFromDb && userFromDb?.role === 'admin') {
-			setIsAdmin(true);
-		}
+		console.log(userFromDb);
 	}, [typeof window, userFromDb]);
 
 	// const { data, isLoading, isError, error, isFetching } =

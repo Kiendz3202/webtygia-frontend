@@ -16,7 +16,6 @@ import { useUserPopulateSymbolStock } from '@services/user/useUser';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import SimpleChartCanvas from '@components/chart/stock/SimpleChartCanvas';
 
 function HnxStockView() {
 	// const [email, setEmail] = useState();
@@ -114,10 +113,7 @@ function HnxStockView() {
 						<h1 className="text-[2.8rem] font-semibold">
 							Báo giá cổ phiếu chứng khoán
 						</h1>
-						<div>
-							{/* <TopPreviewStock /> */}
-							{/* <SimpleChartCanvas /> */}
-						</div>
+						<div>{/* <TopPreviewStock /> */}</div>
 						<div className="overflow-x-auto w-full">
 							<table className="w-[99.6rem] mt-[4rem] border-separate border-spacing-y-[6px]">
 								<thead className="text-[1.8rem] font-medium h-[4.5rem] text-blue-text">

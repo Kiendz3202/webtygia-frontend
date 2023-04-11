@@ -48,7 +48,9 @@ function PriceDetail({ stock, description }) {
 				.get(
 					`${
 						process.env.NEXT_PUBLIC_PRODUCT_URL
-					}/user/${localStorage.getItem('email')}`
+					}/user-populate-symbol-stock/${localStorage.getItem(
+						'email'
+					)}`
 				)
 				.then((res) => res.data.data[0]);
 			console.log(user);
@@ -79,7 +81,9 @@ function PriceDetail({ stock, description }) {
 				.get(
 					`${
 						process.env.NEXT_PUBLIC_PRODUCT_URL
-					}/user/${localStorage.getItem('email')}`
+					}/user-populate-symbol-stock/${localStorage.getItem(
+						'email'
+					)}`
 				)
 				.then((res) => res.data.data[0]);
 			setUser(user);

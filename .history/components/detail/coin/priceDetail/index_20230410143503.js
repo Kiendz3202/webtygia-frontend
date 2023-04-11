@@ -195,42 +195,30 @@ function PriceDetail({ coin, descriptionData }) {
 								{/* <OpenInNewIcon fontSize="medium" /> */}
 							</div>
 						</a>
-						<a
-							target="_blank"
-							rel="noopener noreferrer"
-							href={descriptionData?.github}
-						>
-							<div className="flex p-[0.5rem] m-[0.5rem] bg-back-ground-1 rounded-lg cursor-pointer hover:opacity-80 items-center">
-								<GitHubIcon sx={{ fontSize: '2rem' }} />
-								<span
-									// target="_blank"
-									// rel="noopener noreferrer"
-									// href={descriptionData?.github}
-									className="px-[0.5rem]"
-								>
-									Mã nguồn
-								</span>
-								<OpenInNewIcon sx={{ fontSize: '2rem' }} />
-							</div>
-						</a>
-						<a
-							target="_blank"
-							rel="noopener noreferrer"
-							href={descriptionData?.official_forum_url}
-						>
-							<div className="flex p-[0.5rem] m-[0.5rem] bg-back-ground-1 rounded-lg cursor-pointer hover:opacity-80 items-center">
-								<PersonIcon sx={{ fontSize: '2rem' }} />
-								<span
-									// target="_blank"
-									// rel="noopener noreferrer"
-									// href={descriptionData?.official_forum_url}
-									className="px-[0.5rem]"
-								>
-									Cộng đồng
-								</span>
-								<OpenInNewIcon sx={{ fontSize: '2rem' }} />
-							</div>
-						</a>
+						<div className="flex p-[0.5rem] m-[0.5rem] bg-back-ground-1 rounded-lg cursor-pointer hover:opacity-80 items-center">
+							<GitHubIcon sx={{ fontSize: '2rem' }} />
+							<a
+								target="_blank"
+								rel="noopener noreferrer"
+								href={descriptionData?.github}
+								className="px-[0.5rem]"
+							>
+								Mã nguồn
+							</a>
+							<OpenInNewIcon sx={{ fontSize: '2rem' }} />
+						</div>
+						<div className="flex p-[0.5rem] m-[0.5rem] bg-back-ground-1 rounded-lg cursor-pointer hover:opacity-80 items-center">
+							<PersonIcon sx={{ fontSize: '2rem' }} />
+							<a
+								target="_blank"
+								rel="noopener noreferrer"
+								href={descriptionData?.official_forum_url}
+								className="px-[0.5rem]"
+							>
+								Cộng đồng
+							</a>
+							<OpenInNewIcon sx={{ fontSize: '2rem' }} />
+						</div>
 					</div>
 				</div>
 				<div className="">

@@ -116,7 +116,7 @@ function HnxStockView() {
 						</h1>
 						<div>
 							{/* <TopPreviewStock /> */}
-							{/* <SimpleChartCanvas /> */}
+							<SimpleChartCanvas />
 						</div>
 						<div className="overflow-x-auto w-full">
 							<table className="w-[99.6rem] mt-[4rem] border-separate border-spacing-y-[6px]">
