@@ -190,9 +190,6 @@ function NewsDetailView({ data }) {
 																data?._id
 															)
 														}
-														sx={{
-															fontSize: '2.4rem',
-														}}
 														className="text-[2.4rem] text-green-500 cursor-pointer hover:opacity-80"
 													/>
 												) : (
@@ -200,9 +197,6 @@ function NewsDetailView({ data }) {
 														onClick={() =>
 															saveNews(data?._id)
 														}
-														sx={{
-															fontSize: '2.4rem',
-														}}
 														className="text-[2.4rem] cursor-pointer hover:opacity-80"
 													/>
 												)}
