@@ -179,7 +179,7 @@ function NewsDetailView({ data }) {
 										<div className="ml-[0.5rem]">
 											{dateDay} {dateHour}
 										</div>
-										{user ? (
+										{user && (
 											<div className="ml-[1rem]">
 												{user?.followNews?.includes(
 													data?._id
@@ -201,36 +201,8 @@ function NewsDetailView({ data }) {
 													/>
 												)}
 											</div>
-										) : (
-											<div className="ml-[1rem]">
-												{isFollowed ? (
-													<BookmarkIcon
-														onClick={() =>
-															deleteNewLocalStorage(
-																data?._id
-															)
-														}
-														sx={{
-															fontSize: '2.4rem',
-														}}
-														className="text-[2.4rem] text-green-500 cursor-pointer hover:opacity-80"
-													/>
-												) : (
-													<BookmarkBorderIcon
-														onClick={() =>
-															saveNewLocalStorage(
-																data?._id
-															)
-														}
-														sx={{
-															fontSize: '2.4rem',
-														}}
-														className="text-[2.4rem] cursor-pointer hover:opacity-80"
-													/>
-												)}
-											</div>
 										)}
-										{/* {
+										{
 											<div className="ml-[1rem]">
 												{isFollowed ? (
 													<BookmarkIcon
@@ -258,7 +230,7 @@ function NewsDetailView({ data }) {
 													/>
 												)}
 											</div>
-										} */}
+										}
 									</div>
 								</div>
 								<div className=" rounded-[20px] max-w-[80rem] mx-auto mt-[2rem]">
