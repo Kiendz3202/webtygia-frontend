@@ -280,7 +280,7 @@ function Header() {
 								onClick={toggleOpenModal}
 								className={`cursor-pointer hover:opacity-80 ${
 									isOpenModal ? 'rotate-180' : 'rotate-0'
-								} transition-transform ease-in-out duration-500 `}
+								} transition-transform ease-in-out duration-500`}
 								sx={{ fontSize: '2rem' }}
 							/>
 							{/* {isOpenModal && ( */}

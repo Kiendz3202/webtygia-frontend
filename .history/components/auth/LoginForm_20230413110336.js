@@ -104,8 +104,8 @@ function LoginForm() {
 	const LoginByGoogle = async () => {
 		// router.replace(`http://localhost:5000/auth/google`);
 		router.replace(
-			`${process.env.NEXT_PUBLIC_BE_SUBDOMAIN_URL}/auth/google`
-			// `http://localhost:5000/auth/google`
+			// `${process.env.NEXT_PUBLIC_BE_SUBDOMAIN_URL}/auth/google`
+			`http://localhost:5000/auth/google`
 		);
 	};
 
