@@ -140,6 +140,7 @@ function NewsDetailView({ data }) {
 	// setDay(dateDay);
 	// }
 	// }, [data]);
+	console.log(user);
 	return (
 		<MainLayout>
 			<div className=" h-auto sm:mt-[4.6rem] mb-[2.5rem]  bg-white-text rounded-[1.5rem] px-[3.2rem] pb-[3.2rem] shadow-shadow-custom">
@@ -266,8 +267,7 @@ function NewsDetailView({ data }) {
 										} */}
 									</div>
 								</div>
-								{/* max-w-[80rem] */}
-								<div className=" rounded-[20px] w-full mx-auto mt-[2rem]">
+								<div className=" rounded-[20px] w-fulll mx-auto mt-[2rem]">
 									<img
 										className="w-full h-[30rem] md:h-[50rem] rounded-[20px]"
 										src={data?.image}

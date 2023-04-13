@@ -75,13 +75,7 @@ function Coin() {
 										coin.currentPrice
 									).toLocaleString()}
 								</li>
-								<li
-									className={`text-[1.4rem] font-medium ${
-										coin.priceChange1hPercent >= 0
-											? 'text-price-increase'
-											: 'text-price-decrease'
-									} ml-[-1rem]`}
-								>
+								<li className="text-[1.4rem] font-medium text-price-increase ml-[-1rem]">
 									{coin.priceChange1hPercent.split('.')[0] +
 										'.' +
 										coin.priceChange1hPercent

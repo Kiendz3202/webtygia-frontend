@@ -48,19 +48,19 @@ function Stock() {
 								<li className="text-[1.4rem] font-semibold col-span-2 cursor-pointer hover:opacity-80">
 									{stock.symbol.toUpperCase()}
 								</li>
-								<li className="text-[1.4rem] font-medium ml-[-3rem]">
+								<li
+									className={`text-[1.4rem] font-medium ml-[-3rem] ${
+										stock.currentPrice >= 0
+											? 'text-price-increase'
+											: 'text-price-decrease'
+									}`}
+								>
 									{/* {parseFloat(stock.currentPrice) * 1000} */}
 									{parseFloat(
 										stock.currentPrice * 1000
 									).toLocaleString()}
 								</li>
-								<li
-									className={`text-[1.4rem] font-medium ${
-										stock.changePercent.slice(0, -1) >= 0
-											? 'text-price-increase'
-											: 'text-price-decrease'
-									} ml-[-1rem]`}
-								>
+								<li className="text-[1.4rem] font-medium text-price-increase ml-[-1rem]">
 									{stock.changePercent}
 								</li>
 							</ul>

@@ -56,7 +56,7 @@ function Stock() {
 								</li>
 								<li
 									className={`text-[1.4rem] font-medium ${
-										stock.changePercent.slice(0, -1) >= 0
+										stock.changePercent >= 0
 											? 'text-price-increase'
 											: 'text-price-decrease'
 									} ml-[-1rem]`}
