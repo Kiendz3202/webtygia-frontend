@@ -59,8 +59,10 @@ function CreateNewsView() {
 	const [quotation, setQuotation] = useState('');
 	const [category, setCategory] = useState('');
 	const [tag, setTag] = useState('');
-	const [nameAdminPost, setNameAdminPost] = useState();
-	const [avatarAdminPost, setAvatarAdminPost] = useState();
+	const [nameAdminPost, setNameAdminPost] = useState('Nguyen Manh Kien');
+	const [avatarAdminPost, setAvatarAdminPost] = useState(
+		'https://img.meta.com.vn/Data/image/2021/09/22/anh-meo-cute-de-thuong-dang-yeu-42.jpg'
+	);
 
 	const [selectedFile, setSelectedFile] = useState();
 	const [image, setImage] = useState();

@@ -54,7 +54,7 @@ function Description({ coin, descriptionData }) {
 				</h2>
 			)}
 			<div
-				className="text-[1.8rem] text-black-text mt-[1rem] break-words max-w-[1440px]"
+				className="text-[1.8rem] text-black-text mt-[1rem] break-words max-w-[1038px]"
 				dangerouslySetInnerHTML={{
 					__html: descriptionData?.description,
 				}}

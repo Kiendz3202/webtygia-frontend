@@ -76,7 +76,7 @@ function ExchagneRate({ data }) {
 						/>
 						<div className="ml-[1rem]">
 							<h1 className="text-[1.8rem] font-semibold capitalize text-back-text w-fit">
-								{/* Tether */}
+								Tether
 								<p className=" text-[1.4rem] text-grey-text ">
 									USDT
 								</p>

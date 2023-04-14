@@ -164,7 +164,7 @@ function Header() {
 	return (
 		<header
 			id="header"
-			className=" flex flex-col items-center w-full mx-auto top-0  z-50 h-[70px] bg-blue-2 "
+			className=" flex flex-col items-center w-full mx-auto top-0  z-50 h-[70px] bg-blue-2"
 		>
 			<div className="  w-full max-w-[144rem] my-auto flex justify-between h-[6rem] items-center px-[28px] lg:px-0">
 				<div className="text-[2.4rem] font-black italic text-white">
