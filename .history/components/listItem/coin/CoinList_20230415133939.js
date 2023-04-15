@@ -12,7 +12,6 @@ function CoinList({
 	isInFollowPageAndOffline,
 }) {
 	// const { data, isLoading, isError, error, isFetching } = useCoinList();
-
 	const [followCoinsLocalStorage, setFollowCoinsLocalStorage] = useState(
 		typeof window !== 'undefined' &&
 			(JSON.parse(localStorage.getItem('followCoins')) || [])

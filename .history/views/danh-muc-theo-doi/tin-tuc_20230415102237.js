@@ -1,4 +1,4 @@
-import StockFollowTable from '@components/followTable/StockFollowTable';
+import NewsFollowTable from '@components/followTable/NewsFollowTable';
 import MainLayout from '@components/layouts/mainLayout';
 import PaginationCoinList from '@components/pagination/PaginationCoinList';
 import Loading from '@components/UI/Loading';
@@ -7,16 +7,21 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 
-function StockView() {
+function NewsView() {
 	const [email, setEmail] = useState();
 	const [pageNumber, setPageNumber] = useState(1);
-	// const [populateField, setPopulateField] = useState('followStocks');
+	// const [populateField, setPopulateField] = useState('followNews');
 	const [followDataOffline, setFollowDataOffline] = useState();
+	const [followCoinsLocalStorage, setFollowCoinsLocalStorage] = useState(
+		typeof window !== 'undefined' &&
+			(JSON.parse(localStorage.getItem('followNews')) || [])
+	);
 
 	const router = useRouter();
+	// console.log(followCoinsLocalStorage);
 
 	const { dataisSuccess, data, isLoading, isError } =
-		useUserPopulatePagination('followStocks', 25, pageNumber);
+		useUserPopulatePagination('followNews', 25, pageNumber);
 
 	useEffect(() => {
 		const fetchDataFollow = async (arrIdCoin, arrIdStock, arrIdNews) => {
@@ -48,19 +53,19 @@ function StockView() {
 			fetchDataFollow(arrIdCoin, arrIdStock, arrIdNews);
 		}
 	}, [typeof window]);
+
 	return (
 		<>
 			<MainLayout>
 				<div className=" h-auto sm:mt-[4.6rem] mb-[2.5rem]  bg-white-text rounded-[1.5rem]  lg:px-[3.2rem] py-[3.2rem] shadow-shadow-custom">
 					<div className="text-[2.8rem] font-semibold">
-						Danh mục theo dõi cổ phiếu
+						Danh mục theo dõi tin tức
 					</div>
-
 					{data ? (
 						<div>
-							<StockFollowTable
+							<NewsFollowTable
 								data={data.data[0]}
-								populateField="followStocks"
+								populateField="followNews"
 							/>
 							<div className="">
 								{data && (
@@ -75,14 +80,13 @@ function StockView() {
 						</div>
 					) : (
 						<div>
-							<StockFollowTable
+							<NewsFollowTable
 								data={followDataOffline}
-								populateField="followStocks"
+								populateField="followNews"
 								setFollowDataOffline={setFollowDataOffline}
 							/>
 						</div>
 					)}
-
 					{isLoading && <Loading />}
 				</div>
 			</MainLayout>
@@ -90,4 +94,4 @@ function StockView() {
 	);
 }
 
-export default StockView;
+export default NewsView;

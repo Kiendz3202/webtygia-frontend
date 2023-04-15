@@ -65,7 +65,7 @@ function NewsFollowTable({ data, populateField, setFollowDataOffline }) {
 	return (
 		<div className="flex flex-wrap flex-col lg:flex-row  ">
 			{blogData &&
-				blogData[populateField].map((blog, index) => (
+				blogData[populateField]?.slice(0, 4).map((blog, index) => (
 					<div
 						key={index}
 						className=" px-[1rem] mt-[2rem] lg:mb-0 w-full lg:w-1/4 "

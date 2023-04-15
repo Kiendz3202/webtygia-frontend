@@ -75,18 +75,16 @@ const useUserPopulate = (populateField, perPage, page) => {
 
 const useUserPopulatePagination = (populateField, perPage, page) => {
 	const fetchUser = async () => {
-		if (localStorage.getItem('email')) {
-			return axios
-				.get(
-					`${
-						process.env.NEXT_PUBLIC_PRODUCT_URL
-					}/user-populate-pagination/${localStorage.getItem(
-						'email'
-					)}?populate=${populateField}&per_page=${perPage}&page=${page}`
-				)
-				.then((res) => res.data)
-				.catch((err) => console.log(err));
-		}
+		return axios
+			.get(
+				`${
+					process.env.NEXT_PUBLIC_PRODUCT_URL
+				}/user-populate-pagination/${localStorage.getItem(
+					'email'
+				)}?populate=${populateField}&per_page=${perPage}&page=${page}`
+			)
+			.then((res) => res.data)
+			.catch((err) => console.log(err));
 	};
 
 	return useQuery(

@@ -16,7 +16,7 @@ function StockView() {
 	const router = useRouter();
 
 	const { dataisSuccess, data, isLoading, isError } =
-		useUserPopulatePagination('followStocks', 25, pageNumber);
+		useUserPopulatePagination('followStocks', 20, pageNumber);
 
 	useEffect(() => {
 		const fetchDataFollow = async (arrIdCoin, arrIdStock, arrIdNews) => {

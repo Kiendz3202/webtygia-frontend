@@ -4,7 +4,6 @@ import PaginationCoinList from '@components/pagination/PaginationCoinList';
 import Loading from '@components/UI/Loading';
 import { useUserPopulatePagination } from '@services/user/useUser';
 import axios from 'axios';
-import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 
 function StockView() {
@@ -16,7 +15,7 @@ function StockView() {
 	const router = useRouter();
 
 	const { dataisSuccess, data, isLoading, isError } =
-		useUserPopulatePagination('followStocks', 25, pageNumber);
+		useUserPopulatePagination('followStocks', 5, pageNumber);
 
 	useEffect(() => {
 		const fetchDataFollow = async (arrIdCoin, arrIdStock, arrIdNews) => {
@@ -59,7 +58,7 @@ function StockView() {
 					{data ? (
 						<div>
 							<StockFollowTable
-								data={data.data[0]}
+								data={data}
 								populateField="followStocks"
 							/>
 							<div className="">

@@ -1,14 +1,9 @@
 export function SaveDataToLocalStorage(key, value) {
-	if (JSON.parse(localStorage.getItem(`${key}`))?.length == 30) {
-		alert('Số lượng theo dõi tối đa khi không đăng nhập không quá 30');
-		window.location.reload();
-		return;
-	}
 	// if (
 	// 	JSON.parse(localStorage.getItem(`${key}`)) &&
 	// 	JSON.parse(localStorage.getItem(`${key}`)).length < 5
 	// ) {
-	// console.log(JSON.parse(localStorage.getItem(`${key}`)).length);
+	console.log(JSON.parse(localStorage.getItem(`${key}`)).length);
 	var a = [];
 	// Parse the serialized data back into an aray of objects
 	a = JSON.parse(localStorage.getItem(`${key}`)) || [];
@@ -20,6 +15,11 @@ export function SaveDataToLocalStorage(key, value) {
 	// alert('Số lượng theo dõi tối đa khi không đăng nhập không quá 30');
 	// window.location.reload();
 	// }
+
+	if (JSON.parse(localStorage.getItem(`${key}`))?.length > 5) {
+		alert('Số lượng theo dõi tối đa khi không đăng nhập không quá 30');
+		window.location.reload();
+	}
 }
 
 export function DeleteDataToLocalStorage(key, value) {

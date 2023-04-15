@@ -12,7 +12,6 @@ function CoinList({
 	isInFollowPageAndOffline,
 }) {
 	// const { data, isLoading, isError, error, isFetching } = useCoinList();
-
 	const [followCoinsLocalStorage, setFollowCoinsLocalStorage] = useState(
 		typeof window !== 'undefined' &&
 			(JSON.parse(localStorage.getItem('followCoins')) || [])
@@ -35,19 +34,23 @@ function CoinList({
 	return (
 		<>
 			{data &&
-				data.map((coin, index) => (
-					<CoinItem
-						user={user}
-						saveCoins={saveCoins}
-						deleteCoins={deleteCoins}
-						key={coin.nameId}
-						coin={coin}
-						index={index}
-						followCoinsLocalStorage={followCoinsLocalStorage}
-						setFollowCoinsLocalStorage={setFollowCoinsLocalStorage}
-						isInFollowPageAndOffline={isInFollowPageAndOffline}
-					/>
-				))}
+				data
+					.slice(0, 4)
+					.map((coin, index) => (
+						<CoinItem
+							user={user}
+							saveCoins={saveCoins}
+							deleteCoins={deleteCoins}
+							key={coin.nameId}
+							coin={coin}
+							index={index}
+							followCoinsLocalStorage={followCoinsLocalStorage}
+							setFollowCoinsLocalStorage={
+								setFollowCoinsLocalStorage
+							}
+							isInFollowPageAndOffline={isInFollowPageAndOffline}
+						/>
+					))}
 		</>
 	);
 }

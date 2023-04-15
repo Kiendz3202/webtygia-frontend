@@ -61,44 +61,12 @@ const useUserPopulate = (populateField, perPage, page) => {
 			.catch((err) => console.log(err));
 	};
 
-	return useQuery(
-		`/user-populate/email?populate=${populateField}`,
-		fetchUser,
-		{
-			cacheTime: Infinity,
-			// refetchOnWindowFocus: false,
-			staleTime: 0,
-			// refetchInterval: 5000,
-		}
-	);
-};
-
-const useUserPopulatePagination = (populateField, perPage, page) => {
-	const fetchUser = async () => {
-		if (localStorage.getItem('email')) {
-			return axios
-				.get(
-					`${
-						process.env.NEXT_PUBLIC_PRODUCT_URL
-					}/user-populate-pagination/${localStorage.getItem(
-						'email'
-					)}?populate=${populateField}&per_page=${perPage}&page=${page}`
-				)
-				.then((res) => res.data)
-				.catch((err) => console.log(err));
-		}
-	};
-
-	return useQuery(
-		`/user-populate-pagination/email?populate=${populateField}&per_page=${perPage}&page=${page}`,
-		fetchUser,
-		{
-			cacheTime: Infinity,
-			// refetchOnWindowFocus: false,
-			staleTime: 0,
-			// refetchInterval: 5000,
-		}
-	);
+	return useQuery(`/user/email?populate=${populateField}`, fetchUser, {
+		cacheTime: Infinity,
+		// refetchOnWindowFocus: false,
+		staleTime: 0,
+		// refetchInterval: 5000,
+	});
 };
 
 const useUserPopulateSymbolStock = (email) => {
@@ -160,7 +128,6 @@ const useUserFollowAndInterest = (email) => {
 export {
 	useUser,
 	useUserPopulate,
-	useUserPopulatePagination,
 	useUserPopulateSymbolStock,
 	useUserFollowAndInterest,
 	useUserPopulateAllFields,

@@ -1,4 +1,4 @@
-import StockFollowTable from '@components/followTable/StockFollowTable';
+import CoinFollowTable from '@components/followTable/CoinFollowTable';
 import MainLayout from '@components/layouts/mainLayout';
 import PaginationCoinList from '@components/pagination/PaginationCoinList';
 import Loading from '@components/UI/Loading';
@@ -7,17 +7,17 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 
-function StockView() {
+function CoinView() {
 	const [email, setEmail] = useState();
 	const [pageNumber, setPageNumber] = useState(1);
-	// const [populateField, setPopulateField] = useState('followStocks');
+	// const [populateField, setPopulateField] = useState('followCoins');
 	const [followDataOffline, setFollowDataOffline] = useState();
 
 	const router = useRouter();
 
 	const { dataisSuccess, data, isLoading, isError } =
-		useUserPopulatePagination('followStocks', 25, pageNumber);
-
+		useUserPopulatePagination('followCoins', 25, pageNumber);
+	console.log(data);
 	useEffect(() => {
 		const fetchDataFollow = async (arrIdCoin, arrIdStock, arrIdNews) => {
 			const res = await axios
@@ -48,19 +48,19 @@ function StockView() {
 			fetchDataFollow(arrIdCoin, arrIdStock, arrIdNews);
 		}
 	}, [typeof window]);
+	console.log(data?.data[0]);
 	return (
 		<>
 			<MainLayout>
 				<div className=" h-auto sm:mt-[4.6rem] mb-[2.5rem]  bg-white-text rounded-[1.5rem]  lg:px-[3.2rem] py-[3.2rem] shadow-shadow-custom">
 					<div className="text-[2.8rem] font-semibold">
-						Danh mục theo dõi cổ phiếu
+						Danh mục theo dõi tiền điện tử
 					</div>
-
 					{data ? (
 						<div>
-							<StockFollowTable
-								data={data.data[0]}
-								populateField="followStocks"
+							<CoinFollowTable
+								data={data?.data[0]}
+								populateField="followCoins"
 							/>
 							<div className="">
 								{data && (
@@ -75,9 +75,9 @@ function StockView() {
 						</div>
 					) : (
 						<div>
-							<StockFollowTable
+							<CoinFollowTable
 								data={followDataOffline}
-								populateField="followStocks"
+								populateField="followCoins"
 								setFollowDataOffline={setFollowDataOffline}
 							/>
 						</div>
@@ -90,4 +90,4 @@ function StockView() {
 	);
 }
 
-export default StockView;
+export default CoinView;

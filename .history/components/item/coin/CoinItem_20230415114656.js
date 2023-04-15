@@ -111,7 +111,7 @@ function CoinItem({
 			)}
 			<td className="w-[16rem] text-start cursor-pointer">
 				<Link
-					href={`/coin/${coin?.nameId}`}
+					href={`${process.env.NEXT_PUBLIC_FE_URL}/coin/${coin?.nameId}`}
 					className="block w-full h-full leading-[4.5rem] hover:opacity-80"
 				>
 					{/* <Link href={`${path}/${coin?.nameId}`}> */}

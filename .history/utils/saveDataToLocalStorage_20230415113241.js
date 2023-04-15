@@ -1,5 +1,5 @@
 export function SaveDataToLocalStorage(key, value) {
-	if (JSON.parse(localStorage.getItem(`${key}`))?.length == 30) {
+	if (JSON.parse(localStorage.getItem(`${key}`))?.length == 5) {
 		alert('Số lượng theo dõi tối đa khi không đăng nhập không quá 30');
 		window.location.reload();
 		return;

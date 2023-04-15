@@ -65,7 +65,7 @@ function NewsFollowTable({ data, populateField, setFollowDataOffline }) {
 	return (
 		<div className="flex flex-wrap flex-col lg:flex-row  ">
 			{blogData &&
-				blogData[populateField].map((blog, index) => (
+				blogData[populateField]?.slice(0, 4).map((blog, index) => (
 					<div
 						key={index}
 						className=" px-[1rem] mt-[2rem] lg:mb-0 w-full lg:w-1/4 "
@@ -73,7 +73,7 @@ function NewsFollowTable({ data, populateField, setFollowDataOffline }) {
 						<div className="flex lg:block">
 							<Link
 								className="w-full max-w-[16rem] lg:max-w-[24rem]"
-								href={`/tin-tuc/${blog?.timeUpdate}`}
+								href={`/${blog?.timeUpdate}`}
 							>
 								<img
 									className=" w-[16rem] h-[16rem]  lg:w-[24rem] lg:h-[13rem] object-cover rounded-[8px]"
