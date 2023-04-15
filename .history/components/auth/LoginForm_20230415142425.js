@@ -109,8 +109,7 @@ function LoginForm() {
 		);
 	};
 
-	const handlePushToHomePage = (e) => {
-		e.preventDefault();
+	const handlePushToHomePage = () => {
 		router.push('/trang-chu');
 	};
 	return (

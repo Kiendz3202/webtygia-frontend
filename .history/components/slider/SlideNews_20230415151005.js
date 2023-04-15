@@ -16,7 +16,6 @@ import {
 	DeleteDataToLocalStorage,
 	SaveDataToLocalStorage,
 } from '@utils/saveDataToLocalStorage';
-import { formatTimestampToDayMonthYear } from '@utils/formatDate';
 
 const colors = [
 	'https://coin98.net/_next/image?url=https%3A%2F%2Finventory.coin98.com%2Fimages%2F2000reports-TXlhfDugQZve0mFN.png&w=1920&q=75',
@@ -44,7 +43,7 @@ function SlideNews() {
 	} = useNewsLatest();
 
 	const { data } = useUser(email);
-	// console.log(user);
+	console.log(user);
 
 	useEffect(() => {
 		setEmail(localStorage.getItem('email'));

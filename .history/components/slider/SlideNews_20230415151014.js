@@ -44,7 +44,7 @@ function SlideNews() {
 	} = useNewsLatest();
 
 	const { data } = useUser(email);
-	// console.log(user);
+	console.log(user);
 
 	useEffect(() => {
 		setEmail(localStorage.getItem('email'));

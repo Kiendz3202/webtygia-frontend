@@ -15,7 +15,7 @@ function BottomNavigation() {
 				<Link href="/trang-chu">
 					<div
 						className={`flex flex-col justify-center items-center ${
-							path.includes('/trang-chu') ? 'text-[#fc032c]' : ''
+							path === '/trang-chu' ? 'text-[#fc032c]' : ''
 						}`}
 					>
 						<div>

@@ -48,7 +48,7 @@ function MarketView() {
 							</div>
 						</div>
 					</Link>
-					<Link href="/co-phieu/hnx" className="block w-full h-full">
+					<Link href="/co-phieu" className="block w-full h-full">
 						<div className="flex flex-col p-[2rem] items-start col-span-1 shadow-xl  w-full h-[16rem] rounded-[1.5rem]">
 							<div className="w-[25px]">
 								<svg

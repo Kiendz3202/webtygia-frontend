@@ -44,7 +44,7 @@ function SlideNews() {
 	} = useNewsLatest();
 
 	const { data } = useUser(email);
-	// console.log(user);
+	console.log(user);
 
 	useEffect(() => {
 		setEmail(localStorage.getItem('email'));
@@ -229,7 +229,7 @@ function SlideNews() {
 											</div>
 											<div className="ml-[0.5rem]">
 												{formatTimestampToDayMonthYear(
-													blog.timeUpdate
+													blog.timeUpdate * 1000
 												)}
 											</div>
 											{user ? (

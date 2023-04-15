@@ -195,9 +195,7 @@ function NewsFollowTable({ data, populateField, setFollowDataOffline }) {
 													<FiberManualRecordIcon className=" text-gray-400" />
 												</div>
 												<div className="ml-[0.5rem]">
-													{formatTimestampToDayMonthYear(
-														blog.timeUpdate
-													)}
+													29/10
 												</div>
 												<div className="ml-auto">
 													{userFollowNews?.includes(

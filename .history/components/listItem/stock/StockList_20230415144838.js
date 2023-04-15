@@ -1,6 +1,5 @@
 import StockItem from '@components/item/stock/StockItem';
 import { useStockList } from '@services/stock/useStock';
-import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
 function StockList({

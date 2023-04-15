@@ -109,8 +109,7 @@ function LoginForm() {
 		);
 	};
 
-	const handlePushToHomePage = (e) => {
-		e.preventDefault();
+	const handlePushToHomePage = () => {
 		router.push('/trang-chu');
 	};
 	return (
@@ -180,7 +179,7 @@ function LoginForm() {
 			</div>
 			<button
 				onClick={handlePushToHomePage}
-				className="block text-center mt-[40px] text-[14px] border-b border-grey-boder w-fit mx-auto text-black-text font-medium cursor-pointer hover:opacity-80"
+				className="text-center mt-[40px] text-[14px] border-b border-grey-boder w-fit mx-auto text-black-text font-medium cursor-pointer hover:opacity-80"
 			>
 				<span>
 					<UndoIcon />

@@ -48,7 +48,7 @@ function DanhMucTheoDoiView() {
 					setFollowDataOffline(obj);
 				})
 				.catch((err) => console.log(err));
-			// console.log(res);
+			console.log(res);
 		};
 
 		// const isLocalStorage = JSON.parse(localStorage.getItem('followCoins'));

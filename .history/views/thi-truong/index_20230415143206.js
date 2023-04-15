@@ -10,7 +10,7 @@ function MarketView() {
 				<div className="text-[28px] font-semibold mb-[1rem]">
 					Thị trường
 				</div>
-				<div className="grid grid-cols-2 justify-items-center gap-x-[28px] gap-y-[20px] text-grey-text">
+				<div className="grid grid-cols-2 justify-items-center gap-x-[28px] gap-y-[20px]">
 					<Link href="/gia-vang/sjc" className="block w-full h-full">
 						<div className="flex flex-col p-[2rem] items-start col-span-1 shadow-xl w-full h-[16rem] rounded-[1.5rem]">
 							<div className="w-[25px]">
@@ -48,7 +48,7 @@ function MarketView() {
 							</div>
 						</div>
 					</Link>
-					<Link href="/co-phieu/hnx" className="block w-full h-full">
+					<Link href="/co-phieu" className="block w-full h-full">
 						<div className="flex flex-col p-[2rem] items-start col-span-1 shadow-xl  w-full h-[16rem] rounded-[1.5rem]">
 							<div className="w-[25px]">
 								<svg

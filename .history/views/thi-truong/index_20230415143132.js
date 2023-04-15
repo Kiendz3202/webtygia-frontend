@@ -10,7 +10,7 @@ function MarketView() {
 				<div className="text-[28px] font-semibold mb-[1rem]">
 					Thị trường
 				</div>
-				<div className="grid grid-cols-2 justify-items-center gap-x-[28px] gap-y-[20px] text-grey-text">
+				<div className="grid grid-cols-2 justify-items-center gap-x-[28px] gap-y-[20px]">
 					<Link href="/gia-vang/sjc" className="block w-full h-full">
 						<div className="flex flex-col p-[2rem] items-start col-span-1 shadow-xl w-full h-[16rem] rounded-[1.5rem]">
 							<div className="w-[25px]">
@@ -48,7 +48,7 @@ function MarketView() {
 							</div>
 						</div>
 					</Link>
-					<Link href="/co-phieu/hnx" className="block w-full h-full">
+					<Link href="/co-phieu" className="block w-full h-full">
 						<div className="flex flex-col p-[2rem] items-start col-span-1 shadow-xl  w-full h-[16rem] rounded-[1.5rem]">
 							<div className="w-[25px]">
 								<svg
@@ -245,25 +245,8 @@ function MarketView() {
 					</Link>
 					<Link href="/gia-xang-dau" className="block w-full h-full">
 						<div className="flex flex-col p-[2rem] items-start col-span-1 shadow-xl  w-full h-[16rem] rounded-[1.5rem]">
-							<div className="w-[25px]">
-								<svg
-									width="40"
-									height="40"
-									xmlns="http://www.w3.org/2000/svg"
-									viewBox="0 0 24 24"
-									fill="#5646FF"
-									// stroke="green"
-								>
-									{' '}
-									<g>
-										{' '}
-										<path
-											fill="none"
-											d="M0 0h24v24H0z"
-										/>{' '}
-										<path d="M3 19V4a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v8h2a2 2 0 0 1 2 2v4a1 1 0 0 0 2 0v-7h-2a1 1 0 0 1-1-1V6.414l-1.657-1.657 1.414-1.414 4.95 4.95A.997.997 0 0 1 22 9v9a3 3 0 0 1-6 0v-4h-2v5h1v2H2v-2h1zM5 5v6h7V5H5z" />{' '}
-									</g>{' '}
-								</svg>
+							<div>
+								<Avatar className="w-[6rem] h-[6rem]" />
 							</div>
 							<div className="text-[20px] font-medium mt-[1rem]">
 								Xăng dầu
