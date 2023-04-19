@@ -7,8 +7,8 @@ function NameHeader({
 	name,
 	image,
 	timeUpdate,
-	saveGold,
-	deleteGold,
+	saveInterestRate,
+	deleteInterestRate,
 	user,
 	data,
 }) {
@@ -32,37 +32,29 @@ function NameHeader({
 	return (
 		<div className="flex h-[10rem] items-center">
 			{/* <img src={image} className="w-auto h-[6rem]" /> */}
-			<div className="relative w-[80px] h-[6rem]">
-				<Image
-					src={image}
-					alt="Giá vàng"
-					fill
-					// sizes=""
-					className="w-auto h-full "
-				/>
+			<div className="relative w-auto h-[6rem]">
+				<Image src={image} fill className="w-full h-full " />
 			</div>
 			<div className=" ml-[1rem]">
 				<h1 className="text-[2.4rem] sm:text-[2.8rem] font-semibold capitalize text-back-text w-fit">
 					{name}
 					<p className=" text-[1.4rem] text-grey-text">
 						cập nhật lúc {dateDay} {dateHour}{' '}
-						{user && (
-							<span className="ml-[1rem]">
-								{user?.followGolds?.includes(data?._id) ? (
-									<BookmarkIcon
-										sx={{ fontSize: '2.4rem' }}
-										onClick={() => deleteGold(data?._id)}
-										className="text-[2.4rem] text-green-500 cursor-pointer hover:opacity-80"
-									/>
-								) : (
-									<BookmarkBorderIcon
-										sx={{ fontSize: '2.4rem' }}
-										onClick={() => saveGold(data?._id)}
-										className="text-[2.4rem] cursor-pointer hover:opacity-80"
-									/>
-								)}
-							</span>
-						)}
+						{/* <span className="ml-[1rem]">
+							{user?.followInterestRates?.includes(data?._id) ? (
+								<BookmarkIcon
+									onClick={() =>
+										deleteInterestRate(data?._id)
+									}
+									className="text-[2.4rem] text-green-500 cursor-pointer hover:opacity-80"
+								/>
+							) : (
+								<BookmarkBorderIcon
+									onClick={() => saveInterestRate(data?._id)}
+									className="text-[2.4rem] cursor-pointer hover:opacity-80"
+								/>
+							)}
+						</span> */}
 					</p>
 				</h1>
 			</div>

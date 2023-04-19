@@ -17,12 +17,6 @@ const nextConfig = {
 			'scontent.iocvnpt.com',
 			'vectorflags.s3.amazonaws.com',
 			'inminhkhang.com',
-			'printgo.vn',
-			'brademar.com',
-			'theme.hstatic.net',
-			'mihong.vn',
-			'gigamall.com.vn',
-			'cdnimg.vietnamplus.vn',
 		],
 		// remotePatterns: [
 		// 	{

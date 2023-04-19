@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import { useUsdVietcombankChart } from '@services/foreignCurrency/useUsd';
+import Image from 'next/image';
 
 function NameHeader({
 	// name,
@@ -57,30 +58,42 @@ function NameHeader({
 	return (
 		<div className="flex flex-col sm:flex-row sm:h-[6rem]">
 			<div className="flex items-center">
-				<img
+				{/* <img
 					src="https://vectorflags.s3.amazonaws.com/flags/us-square-01.png"
 					className="w-auto h-[6rem] rounded-[1000px]"
-				/>
+				/> */}
+				<div className="relative w-[50px] h-[50px] sm:w-[60px] sm:h-[60px]">
+					<Image
+						src="https://vectorflags.s3.amazonaws.com/flags/us-square-01.png"
+						alt="Tỷ giá ngoại tệ USD(Đô la Mỹ)"
+						fill
+						className="w-auto h-full rounded-[1000px]"
+					/>
+				</div>
 				<div className=" ml-[1rem]">
 					<h1 className="text-[2.8rem] font-semibold capitalize text-back-text w-fit">
 						USD (Đô la Mỹ)
 						<p className=" text-[1.4rem] text-grey-text">
 							cập nhật lúc {dateDay} {dateHour}{' '}
-							<span className="ml-[1rem]">
-								{user?.followForeignCurrency?.includes(
-									data?._id
-								) ? (
-									<BookmarkIcon
-										onClick={() => deleteUsd(data?._id)}
-										className="text-[2.4rem] text-green-500 cursor-pointer hover:opacity-80"
-									/>
-								) : (
-									<BookmarkBorderIcon
-										onClick={() => saveUsd(data?._id)}
-										className="text-[2.4rem] cursor-pointer hover:opacity-80"
-									/>
-								)}
-							</span>
+							{user && (
+								<span className="ml-[1rem]">
+									{user?.followForeignCurrency?.includes(
+										data?._id
+									) ? (
+										<BookmarkIcon
+											sx={{ fontSize: '2.4rem' }}
+											onClick={() => deleteUsd(data?._id)}
+											className="text-[2.4rem] text-green-500 cursor-pointer hover:opacity-80"
+										/>
+									) : (
+										<BookmarkBorderIcon
+											sx={{ fontSize: '2.4rem' }}
+											onClick={() => saveUsd(data?._id)}
+											className="text-[2.4rem] cursor-pointer hover:opacity-80"
+										/>
+									)}
+								</span>
+							)}
 							{/* <BookmarkBorderIcon
 								// onClick={() => saveExchangeRate(data?._id)}
 								className="text-[2.4rem] cursor-pointer hover:opacity-80 ml-[1rem]"

@@ -37,7 +37,7 @@ function NameHeader({
 					src={image}
 					alt="Giá vàng"
 					fill
-					// sizes=""
+					sizes=""
 					className="w-auto h-full "
 				/>
 			</div>

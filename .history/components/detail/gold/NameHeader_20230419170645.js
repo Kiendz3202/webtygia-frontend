@@ -1,7 +1,6 @@
 import React from 'react';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
-import Image from 'next/image';
 
 function NameHeader({
 	name,
@@ -33,13 +32,7 @@ function NameHeader({
 		<div className="flex h-[10rem] items-center">
 			{/* <img src={image} className="w-auto h-[6rem]" /> */}
 			<div className="relative w-[80px] h-[6rem]">
-				<Image
-					src={image}
-					alt="Giá vàng"
-					fill
-					// sizes=""
-					className="w-auto h-full "
-				/>
+				<Image src={image} fill className="w-auto h-full " />
 			</div>
 			<div className=" ml-[1rem]">
 				<h1 className="text-[2.4rem] sm:text-[2.8rem] font-semibold capitalize text-back-text w-fit">

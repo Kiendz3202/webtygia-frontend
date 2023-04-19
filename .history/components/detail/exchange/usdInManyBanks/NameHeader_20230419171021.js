@@ -62,7 +62,7 @@ function NameHeader({
 					src="https://vectorflags.s3.amazonaws.com/flags/us-square-01.png"
 					className="w-auto h-[6rem] rounded-[1000px]"
 				/> */}
-				<div className="relative w-[50px] h-[50px] sm:w-[60px] sm:h-[60px]">
+				<div className="relative w-[80px] h-[6rem]">
 					<Image
 						src="https://vectorflags.s3.amazonaws.com/flags/us-square-01.png"
 						alt="Tỷ giá ngoại tệ USD(Đô la Mỹ)"
