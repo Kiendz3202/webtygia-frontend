@@ -193,10 +193,6 @@ function CreateNewsView() {
 		};
 	};
 
-	const handleCategory = (e) => {
-		setCategory(e.target.value);
-	};
-
 	return (
 		//image, title,timestamps
 		<MainLayout>
@@ -270,7 +266,7 @@ function CreateNewsView() {
 						<FormControl fullWidth>
 							<InputLabel
 								id="demo-simple-select-label"
-								sx={{ fontSize: 14 }}
+								sx={{ fontSize: 16 }}
 							>
 								Thể loại bài viết
 							</InputLabel>
@@ -278,42 +274,24 @@ function CreateNewsView() {
 								labelId="demo-simple-select-label"
 								id="demo-simple-select"
 								sx={{ fontSize: 14 }}
-								value={category}
-								label="Category"
-								onChange={handleCategory}
+								// value={age}
+								label="Age"
+								// onChange={handleChange}
 							>
-								<MenuItem sx={{ fontSize: 14 }} value={'coin'}>
-									Tiền điện tử
-								</MenuItem>
-								<MenuItem sx={{ fontSize: 14 }} value={'stock'}>
-									Chứng khoán
+								<MenuItem
+									sx={{ fontSize: 14 }}
+									value={'buyCast'}
+								>
+									Mua tiền mặt
 								</MenuItem>
 								<MenuItem
 									sx={{ fontSize: 14 }}
-									value={'interestRate'}
+									value={'buyTransfer'}
 								>
-									Lãi suất ngân hàng
+									Mua chuyển khoản
 								</MenuItem>
-								<MenuItem
-									sx={{ fontSize: 14 }}
-									value={'exchangeRate'}
-								>
-									Ngoại tệ
-								</MenuItem>
-								<MenuItem sx={{ fontSize: 14 }} value={'gold'}>
-									Vàng
-								</MenuItem>
-								<MenuItem
-									sx={{ fontSize: 14 }}
-									value={'petrol'}
-								>
-									Xăng, dầu
-								</MenuItem>
-								<MenuItem
-									sx={{ fontSize: 14 }}
-									value={'others'}
-								>
-									Khác
+								<MenuItem sx={{ fontSize: 14 }} value={'sell'}>
+									Bán
 								</MenuItem>
 							</Select>
 						</FormControl>

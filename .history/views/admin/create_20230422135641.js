@@ -8,11 +8,6 @@ import axios from 'axios';
 import { useUser } from '@services/user/useUser';
 import { useRouter } from 'next/router';
 import Loading from '@components/UI/Loading';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 
 const ReactQuill = dynamic(import('react-quill'), { ssr: false });
 
@@ -193,10 +188,6 @@ function CreateNewsView() {
 		};
 	};
 
-	const handleCategory = (e) => {
-		setCategory(e.target.value);
-	};
-
 	return (
 		//image, title,timestamps
 		<MainLayout>
@@ -259,65 +250,13 @@ function CreateNewsView() {
 						onChange={(e) => setQuotation(e.target.value)}
 					/>
 					<h3 className="pt-8 pb-4 text-2xl font-bold">Thể loại:</h3>
-					{/* <input
+					<input
 						className="border border-black/20 h-12 w-full px-2 text-lg outline-none"
 						type="text"
 						value={category}
 						placeholder="Có thể có nhiều thể loại, ngăn cách nhau bằng dấu ',' ví dụ: vàng, cổ phiếu"
 						onChange={(e) => setCategory(e.target.value)}
-					/> */}
-					<Box className=" w-full  ">
-						<FormControl fullWidth>
-							<InputLabel
-								id="demo-simple-select-label"
-								sx={{ fontSize: 14 }}
-							>
-								Thể loại bài viết
-							</InputLabel>
-							<Select
-								labelId="demo-simple-select-label"
-								id="demo-simple-select"
-								sx={{ fontSize: 14 }}
-								value={category}
-								label="Category"
-								onChange={handleCategory}
-							>
-								<MenuItem sx={{ fontSize: 14 }} value={'coin'}>
-									Tiền điện tử
-								</MenuItem>
-								<MenuItem sx={{ fontSize: 14 }} value={'stock'}>
-									Chứng khoán
-								</MenuItem>
-								<MenuItem
-									sx={{ fontSize: 14 }}
-									value={'interestRate'}
-								>
-									Lãi suất ngân hàng
-								</MenuItem>
-								<MenuItem
-									sx={{ fontSize: 14 }}
-									value={'exchangeRate'}
-								>
-									Ngoại tệ
-								</MenuItem>
-								<MenuItem sx={{ fontSize: 14 }} value={'gold'}>
-									Vàng
-								</MenuItem>
-								<MenuItem
-									sx={{ fontSize: 14 }}
-									value={'petrol'}
-								>
-									Xăng, dầu
-								</MenuItem>
-								<MenuItem
-									sx={{ fontSize: 14 }}
-									value={'others'}
-								>
-									Khác
-								</MenuItem>
-							</Select>
-						</FormControl>
-					</Box>
+					/>
 					<h3 className="pt-8 pb-4 text-2xl font-bold">Tag:</h3>
 					<input
 						className="border border-black/20 h-12 w-full px-2 text-lg outline-none"

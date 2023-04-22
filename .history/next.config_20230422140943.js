@@ -23,7 +23,7 @@ const nextConfig = {
 			'mihong.vn',
 			'gigamall.com.vn',
 			'cdnimg.vietnamplus.vn',
-			'localhost',
+			'localhost:5000',
 		],
 		// remotePatterns: [
 		// 	{

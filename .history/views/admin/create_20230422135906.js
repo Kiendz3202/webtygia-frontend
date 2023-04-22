@@ -193,10 +193,6 @@ function CreateNewsView() {
 		};
 	};
 
-	const handleCategory = (e) => {
-		setCategory(e.target.value);
-	};
-
 	return (
 		//image, title,timestamps
 		<MainLayout>
@@ -238,6 +234,40 @@ function CreateNewsView() {
 						placeholder="Có thể có nhiều keyword, ngăn cách nhau bằng dấu ',' ví dụ: giavang, giavangmoinhat"
 						onChange={(e) => setKeyword(e.target.value)}
 					/> */}
+					<Box className=" w-full min-w-[10rem] mt-[2rem] ">
+						<FormControl fullWidth>
+							<InputLabel
+								id="demo-simple-select-label"
+								sx={{ fontSize: 16 }}
+							>
+								Loại USD
+							</InputLabel>
+							<Select
+								labelId="demo-simple-select-label"
+								id="demo-simple-select"
+								sx={{ fontSize: 14 }}
+								// value={age}
+								label="Age"
+								// onChange={handleChange}
+							>
+								<MenuItem
+									sx={{ fontSize: 14 }}
+									value={'buyCast'}
+								>
+									Mua tiền mặt
+								</MenuItem>
+								<MenuItem
+									sx={{ fontSize: 14 }}
+									value={'buyTransfer'}
+								>
+									Mua chuyển khoản
+								</MenuItem>
+								<MenuItem sx={{ fontSize: 14 }} value={'sell'}>
+									Bán
+								</MenuItem>
+							</Select>
+						</FormControl>
+					</Box>
 					<h3 className="pt-8 pb-4 text-2xl font-bold">
 						Link bài viết gốc(nếu có):
 					</h3>
@@ -266,58 +296,7 @@ function CreateNewsView() {
 						placeholder="Có thể có nhiều thể loại, ngăn cách nhau bằng dấu ',' ví dụ: vàng, cổ phiếu"
 						onChange={(e) => setCategory(e.target.value)}
 					/> */}
-					<Box className=" w-full  ">
-						<FormControl fullWidth>
-							<InputLabel
-								id="demo-simple-select-label"
-								sx={{ fontSize: 14 }}
-							>
-								Thể loại bài viết
-							</InputLabel>
-							<Select
-								labelId="demo-simple-select-label"
-								id="demo-simple-select"
-								sx={{ fontSize: 14 }}
-								value={category}
-								label="Category"
-								onChange={handleCategory}
-							>
-								<MenuItem sx={{ fontSize: 14 }} value={'coin'}>
-									Tiền điện tử
-								</MenuItem>
-								<MenuItem sx={{ fontSize: 14 }} value={'stock'}>
-									Chứng khoán
-								</MenuItem>
-								<MenuItem
-									sx={{ fontSize: 14 }}
-									value={'interestRate'}
-								>
-									Lãi suất ngân hàng
-								</MenuItem>
-								<MenuItem
-									sx={{ fontSize: 14 }}
-									value={'exchangeRate'}
-								>
-									Ngoại tệ
-								</MenuItem>
-								<MenuItem sx={{ fontSize: 14 }} value={'gold'}>
-									Vàng
-								</MenuItem>
-								<MenuItem
-									sx={{ fontSize: 14 }}
-									value={'petrol'}
-								>
-									Xăng, dầu
-								</MenuItem>
-								<MenuItem
-									sx={{ fontSize: 14 }}
-									value={'others'}
-								>
-									Khác
-								</MenuItem>
-							</Select>
-						</FormControl>
-					</Box>
+
 					<h3 className="pt-8 pb-4 text-2xl font-bold">Tag:</h3>
 					<input
 						className="border border-black/20 h-12 w-full px-2 text-lg outline-none"

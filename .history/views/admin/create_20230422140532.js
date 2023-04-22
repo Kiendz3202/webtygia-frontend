@@ -193,10 +193,6 @@ function CreateNewsView() {
 		};
 	};
 
-	const handleCategory = (e) => {
-		setCategory(e.target.value);
-	};
-
 	return (
 		//image, title,timestamps
 		<MainLayout>
@@ -280,7 +276,7 @@ function CreateNewsView() {
 								sx={{ fontSize: 14 }}
 								value={category}
 								label="Category"
-								onChange={handleCategory}
+								onChange={(e) => setCategory(e.target.value)}
 							>
 								<MenuItem sx={{ fontSize: 14 }} value={'coin'}>
 									Tiền điện tử

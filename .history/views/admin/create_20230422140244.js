@@ -193,10 +193,6 @@ function CreateNewsView() {
 		};
 	};
 
-	const handleCategory = (e) => {
-		setCategory(e.target.value);
-	};
-
 	return (
 		//image, title,timestamps
 		<MainLayout>
@@ -270,7 +266,7 @@ function CreateNewsView() {
 						<FormControl fullWidth>
 							<InputLabel
 								id="demo-simple-select-label"
-								sx={{ fontSize: 14 }}
+								sx={{ fontSize: 16 }}
 							>
 								Thể loại bài viết
 							</InputLabel>
@@ -278,9 +274,9 @@ function CreateNewsView() {
 								labelId="demo-simple-select-label"
 								id="demo-simple-select"
 								sx={{ fontSize: 14 }}
-								value={category}
-								label="Category"
-								onChange={handleCategory}
+								// value={age}
+								label="Age"
+								// onChange={handleChange}
 							>
 								<MenuItem sx={{ fontSize: 14 }} value={'coin'}>
 									Tiền điện tử
