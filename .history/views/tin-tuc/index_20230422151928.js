@@ -41,6 +41,7 @@ function TinTucView() {
 		pageNumber,
 		category
 	);
+	// console.log(data);
 
 	const { data: userFromDb } = useUser(email);
 	// console.log(user);
@@ -141,8 +142,6 @@ function TinTucView() {
 						<SelectOptionNews
 							category={category}
 							setCategory={setCategory}
-							setPageNumber={setPageNumber}
-							router={router}
 						/>
 					</div>
 					<div className="flex flex-wrap flex-col lg:flex-row  ">

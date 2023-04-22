@@ -26,7 +26,6 @@ function TinTucView() {
 	const [email, setEmail] = useState();
 	const [user, setUser] = useState();
 	const [pageNumber, setPageNumber] = useState(1);
-	const [category, setCategory] = useState('coin');
 
 	//handle follow offline
 	const [followNewsLocalStorage, setFollowNewsLocalStorage] = useState(
@@ -37,10 +36,9 @@ function TinTucView() {
 	const router = useRouter();
 	const path = router.pathname;
 
-	const { data, isLoading, isError, error, isFetching } = useNewsList(
-		pageNumber,
-		category
-	);
+	const { data, isLoading, isError, error, isFetching } =
+		useNewsList(pageNumber);
+	// console.log(data);
 
 	const { data: userFromDb } = useUser(email);
 	// console.log(user);
@@ -137,13 +135,8 @@ function TinTucView() {
 					<div className="text-[2.6rem] font-medium pt-[2rem] border-b border-grey-boder">
 						<h1>Tin tức theo chủ đề</h1>
 					</div>
-					<div className="w-full mt-[16px]">
-						<SelectOptionNews
-							category={category}
-							setCategory={setCategory}
-							setPageNumber={setPageNumber}
-							router={router}
-						/>
+					<div className="w-[200px] mt-[12px] ml-auto pr-[10px]">
+						<SelectOptionNews />
 					</div>
 					<div className="flex flex-wrap flex-col lg:flex-row  ">
 						{data &&

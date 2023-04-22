@@ -22,9 +22,9 @@ const useNewsList = (page, category) => {
 		],
 		() => fetchNews(page, category),
 		{
-			cacheTime: 3600000,
+			// cacheTime: 3600000,
 			// refetchOnWindowFocus: false,
-			staleTime: 3600000,
+			// staleTime: 3600000,
 			// refetchInterval: 5000,
 		}
 	);

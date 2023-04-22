@@ -5,7 +5,7 @@ import config from '../../utils/TokenBearHeaderAxios';
 
 const useNewsList = (page, category) => {
 	// let pagePagination = page || 1;
-	const fetchNews = async (page, category) => {
+	const fetchNews = async (page) => {
 		return axios
 			.get(
 				`${process.env.NEXT_PUBLIC_PRODUCT_URL}/get-list-news/category?category=${category}&per_page=8&page=${page}`
@@ -14,20 +14,12 @@ const useNewsList = (page, category) => {
 			.catch((err) => console.log(err));
 	};
 
-	return useQuery(
-		[
-			`get-list-news/category?category=${category}&per_page=8&page=${page}`,
-			page,
-			category,
-		],
-		() => fetchNews(page, category),
-		{
-			cacheTime: 3600000,
-			// refetchOnWindowFocus: false,
-			staleTime: 3600000,
-			// refetchInterval: 5000,
-		}
-	);
+	return useQuery(['newsList', page], () => fetchNews(page), {
+		cacheTime: 3600000,
+		// refetchOnWindowFocus: false,
+		staleTime: 3600000,
+		// refetchInterval: 5000,
+	});
 	// return getlistQuery;
 };
 

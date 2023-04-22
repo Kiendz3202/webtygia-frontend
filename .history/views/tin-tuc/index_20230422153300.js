@@ -41,6 +41,7 @@ function TinTucView() {
 		pageNumber,
 		category
 	);
+	console.log(category);
 
 	const { data: userFromDb } = useUser(email);
 	// console.log(user);

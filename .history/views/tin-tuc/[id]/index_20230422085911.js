@@ -292,7 +292,7 @@ function NewsDetailView({ data }) {
 								></div>
 							</div>
 						</div>
-						<div>
+						<div className="">
 							{data?.originSource && (
 								<div className="flex">
 									<a

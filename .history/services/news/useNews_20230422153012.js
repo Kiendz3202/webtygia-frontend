@@ -15,16 +15,12 @@ const useNewsList = (page, category) => {
 	};
 
 	return useQuery(
-		[
-			`get-list-news/category?category=${category}&per_page=8&page=${page}`,
-			page,
-			category,
-		],
+		['newsList', page, category],
 		() => fetchNews(page, category),
 		{
-			cacheTime: 3600000,
+			// cacheTime: 3600000,
 			// refetchOnWindowFocus: false,
-			staleTime: 3600000,
+			// staleTime: 3600000,
 			// refetchInterval: 5000,
 		}
 	);
