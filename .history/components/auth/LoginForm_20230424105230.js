@@ -65,6 +65,7 @@ function LoginForm() {
 			setIsLoading(true);
 
 			const data = await fetchLogin(dataForm);
+			console.log(data);
 
 			if (data.status === 'fail') {
 				console.log('1');
@@ -80,7 +81,7 @@ function LoginForm() {
 			localStorage.setItem('_id', data.data.user._id);
 			localStorage.setItem('role', data.data.user.role);
 
-			router.push('/');
+			// router.push('/');
 		} catch (error) {
 			setErrorMessage('Đăng nhập thất bại, vui lòng thử lại!');
 			setIsLoading(false);

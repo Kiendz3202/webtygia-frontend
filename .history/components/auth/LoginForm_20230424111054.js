@@ -65,6 +65,7 @@ function LoginForm() {
 			setIsLoading(true);
 
 			const data = await fetchLogin(dataForm);
+			console.log(data);
 
 			if (data.status === 'fail') {
 				console.log('1');
